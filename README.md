@@ -1,1 +1,1 @@
-# szamanhmm.github.io
+# szamanqa.github.io

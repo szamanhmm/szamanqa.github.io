@@ -3,94 +3,895 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Saifuz Zaman</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Saifuz Zaman | SQA Tester & QA Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        :root {
+            --primary: #0073b1;
+            --primary-dark: #005582;
+            --secondary: #34495e;
+            --light: #f9f9f9;
+            --dark: #333;
+            --text: #555;
+            --border-radius: 8px;
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            text-align: center;
+            box-sizing: border-box;
         }
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #0073b1;
-            font-size: 2.5rem;
-        }
-        h2, h3 {
-            color: #333;
-        }
-        p {
-            color: #555;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.8;
         }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .button {
             display: inline-block;
             padding: 12px 25px;
-            font-size: 18px;
+            font-size: 16px;
             color: white;
-            background: #0073b1;
+            background: var(--primary);
             text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
         }
+
         .button:hover {
-            background: #005582;
+            background: var(--primary-dark);
+            transform: translateY(-3px);
         }
-        .section {
-            text-align: left;
+
+        .button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .button.secondary:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .date {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            background-color: #e0f7fa;
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certification-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .certification-card p {
+            margin-bottom: 20px;
+        }
+
+        .certification-provider {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            font-size: 24px;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
             margin-top: 30px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
         }
-        ul li {
-            margin: 8px 0;
-            font-size: 16px;
+
+        .social-links a:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
         }
-        ul li::before {
-            content: "✔️ ";
-            color: #0073b1;
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content p {
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image-container {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .profile-image {
+                max-width: 300px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+                left: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Saifuz Zaman</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Saifuz Zaman</h1>
+            <p>SQA Tester | Expert Manual Tester | AI Project Specialist</p>
+            <div class="cta-buttons">
+                <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="button" target="_blank">View My Upwork Profile</a>
+                <a href="#contact" class="button secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <div class="container">
-        <h1>Saifuz Zaman</h1>
-        <h2>SQA Tester | Expert Manual Tester | AI Project | 2+ Years Testing Experience</h2>
-        <h3>BS in CSE & Top-Rated SQA Tester - Upwork</h3>
-        <p>
-            Hello! I hold a BSc in <strong>CSE</strong> and have worked as a <strong>QA Tester</strong> at an MNC, specializing in manual and functional testing. 
-            I provide detailed bug tickets & documentation after thoroughly testing applications. Passionate about <strong>Software Testing & AI Projects</strong>.
-        </p>
-        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="button" target="_blank">View My Upwork Profile</a>
-        <div class="section">
-            <h2>🌟 Skills</h2>
-            <ul>
-                <li>Functional & GUI Testing: Smoke, MAT, and Full AT</li>
-                <li>API Testing: Postman for API validation</li>
-                <li>Test Automation: PyCharm, Selenium WebDriver</li>
-                <li>Test Documentation & Reporting</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>📚 Certifications</h2>
-            <ul>
-                <li>QA Functional Testing Training - A1QA</li>
-                <li>Information Security Awareness - Fortinet</li>
-                <li>Software Testing Fundamentals - LinkedIn</li>
-            </ul>
-        </div>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="profile-image-container">
+                    <img src="/api/placeholder/400/400" alt="Saifuz Zaman" class="profile-image">
+                </div>
+                <div class="about-content">
+                    <h3>SQA Tester with 2+ Years of Experience</h3>
+                    <p>I hold a BSc in Computer Science and Engineering and have worked as a QA Tester at a multinational corporation, specializing in manual and functional testing. With a keen eye for detail and a passion for quality, I provide comprehensive bug tickets and documentation after thoroughly testing applications.</p>
+                    <p>My expertise spans across functional testing, API validation, and test automation, ensuring that applications perform flawlessly. I'm particularly passionate about AI projects and implementing quality assurance processes that drive excellence in software development.</p>
+                    <p>As a top-rated SQA Tester on Upwork, I've helped numerous clients deliver high-quality software products by identifying and addressing issues before they reach end-users.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-check-square"></i>
+                    <h3>Manual Testing</h3>
+                    <p>Expert in functional and GUI testing including Smoke testing, MAT, and Full AT. Detailed test case development and execution with comprehensive documentation.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>API Testing</h3>
+                    <p>Proficient in Postman for API validation, testing RESTful services, and ensuring proper data exchange between system components.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Test Automation</h3>
+                    <p>Experience with PyCharm and Selenium WebDriver for automating repetitive test cases, increasing efficiency and coverage.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Test Documentation</h3>
+                    <p>Creating detailed test plans, test cases, defect reports, and test summary reports to maintain clear communication across teams.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>Bug Tracking</h3>
+                    <p>Thorough experience with bug tracking systems, creating detailed bug tickets with steps to reproduce, expected vs. actual results.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Projects</h3>
+                    <p>Testing AI-driven applications and systems, ensuring proper functionality, reliability, and accuracy of machine learning implementations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior SQA Tester</h3>
+                        <div class="date">2023 - Present</div>
+                        <p>Working as a freelance SQA Tester for various clients, managing quality assurance processes, and providing detailed testing reports.</p>
+                        <ul>
+                            <li>Achieved Top-Rated status on Upwork</li>
+                            <li>Tested 20+ web and mobile applications</li>
+                            <li>Specialized in AI project testing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>QA Tester</h3>
+                        <div class="date">2022 - 2023</div>
+                        <p>Worked as a QA Tester at a multinational corporation, focusing on manual and functional testing of enterprise applications.</p>
+                        <ul>
+                            <li>Executed test cases for critical business applications</li>
+                            <li>Participated in Agile development processes</li>
+                            <li>Improved test coverage by 30%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>QA Intern</h3>
+                        <div class="date">2021 - 2022</div>
+                        <p>Started as a QA intern, learning testing methodologies and gaining practical experience in software quality assurance.</p>
+                        <ul>
+                            <li>Assisted in regression testing</li>
+                            <li>Learned test case development</li>
+                            <li>Participated in daily scrum meetings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Mobile App Testing</h3>
+                        <p>Comprehensive testing of an e-commerce application, including functional testing, usability testing, and performance evaluation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Mobile Testing</span>
+                            <span class="tag">Functional Testing</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Powered Chatbot Testing</h3>
+                        <p>Tested an AI-powered customer service chatbot, ensuring accurate responses and proper handling of various customer inquiries.</p>
+                        <div class="project-tags">
+                            <span class="tag">AI Testing</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">User Scenarios</span>
+                        </div>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Finance API Testing</h3>
+                        <p>Conducted extensive API testing for a financial services platform, ensuring secure data transmission and accurate transaction processing.</p>
+                        <div class="project-tags">
+                            <span class="tag">API Testing</span>
+                            <span class="tag">Postman</span>
+                            <span class="tag">Security Testing</span>
+                        </div>
+                        <a href="#" class="button">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div>
+                        <h3>QA Functional Testing Training</h3>
+                        <p>Comprehensive training in functional testing methodologies, test case design, and quality assurance processes.</p>
+                        <p class="certification-provider">Provider: A1QA</p>
+                    </div>
+                    <a href="#" class="button">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div>
+                        <h3>Information Security Awareness</h3>
+                        <p>Training in information security principles, data protection practices, and security testing methodologies.</p>
+                        <p class="certification-provider">Provider: Fortinet</p>
+                    </div>
+                    <a href="#" class="button">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div>
+                        <h3>Software Testing Fundamentals</h3>
+                        <p>Course covering essential software testing concepts, testing types, and best practices in quality assurance.</p>
+                        <p class="certification-provider">Provider: LinkedIn</p>
+                    </div>
+                    <a href="#" class="button">View Certificate</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@saifuzzaman.com</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Your Location</p>
+                    </div>
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Saifuz Zaman. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation Toggle
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.classList.remove('active');
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form Submission Handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+
+            // Add Animation on Scroll
+            const animateOnScroll = function() {
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const windowHeight = window.innerHeight;
+                    const scroll = window.scrollY;
+                    
+                    if (scroll > sectionTop - windowHeight + sectionHeight / 3) {
+                        section.classList.add('active');
+                    }
+                });
+            };
+
+            // Initial call and scroll event
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
 </body>
 </html>

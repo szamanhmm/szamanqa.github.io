@@ -953,11 +953,27 @@
         </div>
     </div>
 </section>
-<!-- Contact Section -->
+<!-- Client Feedback Section -->
+<section id="client-feedback">
+    <h2>What My Clients Say</h2>
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163925.png?raw=true" alt="Client Feedback 1">
+        </div>
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163943.png?raw=true" alt="Client Feedback 2">
+        </div>
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20164004.png?raw=true" alt="Client Feedback 3">
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section --> 
 <section id="contact">
     <h2>Get In Touch</h2>
-    <div class="contact-grid">
-        <div class="contact-info">
+    <div class="contact-container">
+        <div class="contact-card">
             <h3>Contact Information</h3>
             <div class="contact-detail">
                 <i class="fas fa-envelope"></i>
@@ -969,13 +985,13 @@
             </div>
             <h3>Follow Me</h3>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/saifuzzaman-chayan/" target="_blank">
+                <a href="https://www.linkedin.com/in/saifuzzaman-chayan/" target="_blank" class="social-icon">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/szamanhmm" target="_blank">
+                <a href="https://github.com/szamanhmm" target="_blank" class="social-icon">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.facebook.com/szaman.chayan" target="_blank">
+                <a href="https://www.facebook.com/szaman.chayan" target="_blank" class="social-icon">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
@@ -989,3 +1005,156 @@
         <p>&copy; 2025 Saifuz Zaman. All Rights Reserved.</p>
     </div>
 </footer>
+
+<!-- CSS -->
+<style>
+    /* Full-screen white background */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Client Feedback Section */
+    #client-feedback {
+        padding: 50px 20px;
+        background-color: #f8f9fa;
+    }
+
+    #client-feedback h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .feedback-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .feedback-card {
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .feedback-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Contact Section */
+    #contact {
+        flex-grow: 1;
+        padding: 50px 20px;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    #contact h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        background-color: #007bff;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .contact-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 15px;
+    }
+
+    .contact-detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1rem;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .contact-detail i {
+        font-size: 1.3rem;
+        color: #007bff;
+    }
+
+    .contact-detail a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s ease;
+    }
+
+    .social-icon:hover {
+        background-color: #0056b3;
+    }
+
+    .footer-content {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+</style>

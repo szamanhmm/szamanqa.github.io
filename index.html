@@ -749,13 +749,21 @@
             </button>
         </nav>
  <script>
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const links = document.querySelectorAll('.nav-links a'); // Select all navigation links
 
-        navToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Add event listener to each link
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Close the menu
         });
-    </script>
+    });
+</script>
     </header>
 
     <!-- Hero Section -->

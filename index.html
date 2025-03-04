@@ -953,7 +953,7 @@
         </div>
     </div>
 </section>
-<!-- Client Feedback Section -->
+<!-- Client Feedback Section --> 
 <section id="client-feedback">
     <h2>What My Clients Say</h2>
     <div class="feedback-container">
@@ -1018,13 +1018,14 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     /* Client Feedback Section */
     #client-feedback {
         padding: 50px 20px;
         background-color: #f8f9fa;
+        margin-bottom: 0; /* Remove gap at bottom */
     }
 
     #client-feedback h2 {
@@ -1059,8 +1060,8 @@
 
     /* Contact Section */
     #contact {
-        flex-grow: 1;
         padding: 50px 20px;
+        margin: 0; /* Remove any margin to prevent gap */
     }
 
     #contact h2 {

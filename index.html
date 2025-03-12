@@ -1404,24 +1404,39 @@
     requestAnimationFrame(updateCounter);
   }
   
-  // Intersection Observer for better performance
+  // Initialize with counters at 0
   document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('mobileCount').textContent = '0';
+    document.getElementById('webCount').textContent = '0';
+    
+    // Use Intersection Observer to detect when stats are visible
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        // Only trigger animation when element comes into view
         if (entry.isIntersecting) {
-          animateCounter('mobileCount', 33, 2000);
-          animateCounter('webCount', 19, 2000);
+          // Delay the animation slightly to ensure user sees the beginning
+          setTimeout(() => {
+            animateCounter('mobileCount', 33, 2000);
+            animateCounter('webCount', 21, 2000);
+          }, 300);
+          
+          // Only trigger once
           observer.disconnect();
         }
       });
-    }, { threshold: 0.25 });
+    }, { 
+      threshold: 0.3,  // Element must be 30% visible before triggering
+      rootMargin: '-10px' // Small negative margin to ensure user has scrolled enough
+    });
     
+    // Start observing the stats container
     const container = document.querySelector('.project-stats-container');
     if (container) {
       observer.observe(container);
     }
   });
 </script>
+
         <!-- Projects Section -->
         <section id="projects">
             <h2>Recent Projects</h2>

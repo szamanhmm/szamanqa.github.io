@@ -1566,18 +1566,34 @@
 </section>
 <script>
         let inactivityTimer;
+        let autoScrollInterval;
 
         function startAutoScroll() {
-            // Scroll down the page automatically
-            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            // Clear any existing interval
+            clearInterval(autoScrollInterval);
+
+            // Start continuous scrolling
+            autoScrollInterval = setInterval(() => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    // Stop scrolling if at the bottom of the page
+                    clearInterval(autoScrollInterval);
+                } else {
+                    // Scroll down by 50px every 200ms
+                    window.scrollBy({ top: 50, behavior: 'smooth' });
+                }
+            }, 200);
         }
 
         function resetTimer() {
+            // Clear inactivity timer and auto-scroll interval
             clearTimeout(inactivityTimer);
-            inactivityTimer = setTimeout(startAutoScroll, 4000); // 5 seconds of inactivity
+            clearInterval(autoScrollInterval);
+
+            // Reset inactivity timer
+            inactivityTimer = setTimeout(startAutoScroll, 5000); // Start auto-scroll after 5 seconds of inactivity
         }
 
-        // Reset timer on user interaction
+        // Reset timer on user interaction (mouse movement, key presses, or touch)
         document.addEventListener('mousemove', resetTimer);
         document.addEventListener('keydown', resetTimer);
         document.addEventListener('touchstart', resetTimer);

@@ -18,6 +18,24 @@
             --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
             --accent: #ff9800;
+            --background: #ffffff;
+            --card-bg: #ffffff;
+            --footer-bg: #34495e;
+            --footer-text: #aaa;
+        }
+
+        .dark-mode {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --light: #1a1a1a;
+            --dark: #f5f5f5;
+            --text: #c5c5c5;
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            --background: #121212;
+            --card-bg: #1e1e1e;
+            --footer-bg: #1a1a1a;
+            --footer-text: #888;
         }
 
         * {
@@ -28,21 +46,51 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
+            background-color: var(--background);
             color: var(--text);
             line-height: 1.8;
             overflow-x: hidden;
             width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(0, 115, 177, 0.1);
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle i {
+            transition: transform 0.5s ease, opacity 0.3s ease;
         }
 
         /* Header & Navigation */
         header {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 15px 0;
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background-color 0.3s ease;
         }
 
         nav {
@@ -54,6 +102,11 @@
             padding: 0 20px;
         }
 
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
         .logo {
             font-size: 24px;
             font-weight: 700;
@@ -62,10 +115,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: color 0.3s ease;
         }
 
         .logo i {
             color: var(--accent);
+            transition: color 0.3s ease;
         }
 
         .nav-links {
@@ -309,10 +364,11 @@
 
         section h2 {
             font-size: 2rem;
-            color: var(--secondary);
+            color: var(--dark);
             margin-bottom: 40px;
             text-align: center;
             position: relative;
+            transition: color 0.3s ease;
         }
 
         section h2::after {
@@ -324,6 +380,7 @@
             width: 80px;
             height: 4px;
             background-color: var(--primary);
+            transition: background-color 0.3s ease;
         }
 
         /* About Section */
@@ -338,8 +395,8 @@
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            transition: transform 0.5s ease;
-            border: 5px solid white;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            border: 5px solid var(--card-bg);
         }
 
         .profile-image:hover {
@@ -350,6 +407,7 @@
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.8rem;
+            transition: color 0.3s ease;
         }
 
         .about-content p {
@@ -364,7 +422,7 @@
         }
 
         .skill-card {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -401,6 +459,7 @@
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
+            transition: color 0.3s ease;
         }
 
         .skill-card h3 {
@@ -409,6 +468,7 @@
             color: var(--dark);
             position: relative;
             z-index: 1;
+            transition: color 0.3s ease;
         }
 
         .skill-card p {
@@ -432,6 +492,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            transition: background-color 0.3s ease;
         }
 
         .timeline-item {
@@ -454,10 +515,10 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: white;
+            background-color: var(--card-bg);
             border: 4px solid var(--primary);
             border-radius: 50%;
-            top: 20px;
+top: 20px;
             z-index: 1;
             transition: all 0.3s ease;
         }
@@ -632,13 +693,12 @@
             background-color: #f8f9fa;
             margin-bottom: 0;
         }
-
-        #client-feedback h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 30px;
-        }
+#client-feedback h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark); /* Change from #333 to var(--dark) */
+    margin-bottom: 30px;
+}
 
         .feedback-container {
             display: flex;
@@ -1088,8 +1148,46 @@
             <button class="mobile-nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
             </button>
+<button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+</button>
         </nav>
+
  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        // Save preference
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
+
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     const links = document.querySelectorAll('.nav-links a'); // Select all navigation links
@@ -1547,7 +1645,7 @@
             </div>
             <div class="contact-detail">
                 <i class="fas fa-map-marker-alt"></i>
-                <p>Feni, Bangladesh</p>
+                <p><a href="https://www.google.com/maps/place/Feni/@23.0122325,91.3782879,14z/data=!3m1!4b1!4m6!3m5!1s0x3753429e88a352f7:0xdf9547cb76f03b88!8m2!3d23.0128119!4d91.3965095!16s%2Fm%2F05mzxlf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D">Feni, Bangladesh</a></p>
             </div>
             <h3>Follow Me</h3>
             <div class="social-links">
@@ -1624,82 +1722,42 @@
     }
 
     /* Client Feedback Section */
-    #client-feedback {
-        padding: 50px 20px;
-        background-color: #f8f9fa;
-        margin-bottom: 0; /* Remove gap at bottom */
-    }
+  #client-feedback {
+    padding: 50px 20px;
+    background-color: var(--light);
+    margin-bottom: 0; /* Remove gap at bottom */
+    transition: background-color 0.3s ease;
+}
 
-    #client-feedback h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 30px;
-    }
+.feedback-card {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .feedback-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+#contact {
+    padding: 50px 20px;
+    margin: 0; /* Remove any margin to prevent gap */
+    background-color: var(--light);
+    transition: background-color 0.3s ease;
+}
 
-    .feedback-card {
-        background: #fff;
-        padding: 10px;
-        border-radius: 12px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        max-width: 100%;
-        text-align: center;
-    }
+.contact-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .feedback-card img {
-        width: 100%;
-        border-radius: 8px;
-    }
-
-    /* Contact Section */
-    #contact {
-        padding: 50px 20px;
-        margin: 0; /* Remove any margin to prevent gap */
-    }
-
-    #contact h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
-        position: relative;
-    }
-
-    #contact h2::after {
-        content: "";
-        display: block;
-        width: 50px;
-        height: 4px;
-        background-color: #007bff;
-        margin: 10px auto 0;
-        border-radius: 2px;
-    }
-
-    .contact-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    .contact-card {
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 100%;
-        text-align: center;
-    }
 
     .contact-card h3 {
         font-size: 1.2rem;
@@ -1853,6 +1911,128 @@ img {
 * {
     box-sizing: border-box;
 }
+/* Fix for white toggle menu icon */
+.mobile-nav-toggle {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sun-icon, .moon-icon {
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.sun-icon {
+    color: #ff9800;
+    transform: translateY(0);
+}
+
+.moon-icon {
+    color: #0073b1;
+    transform: translateY(40px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .nav-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .logo {
+    color: #0073b1;
+}
+
+body.dark-mode .skill-card, 
+body.dark-mode .project-card, 
+body.dark-mode .certification-card, 
+body.dark-mode .contact-card, 
+body.dark-mode .feedback-card {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .timeline-content {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .dark-mode-toggle .sun-icon {
+    transform: translateY(40px);
+}
+
+body.dark-mode .dark-mode-toggle .moon-icon {
+    transform: translateY(0);
+}
+/* Fix for mobile menu in dark mode */
+body.dark-mode .nav-links {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .nav-links a {
+    color: var(--dark);
+}
+
+body.dark-mode .mobile-nav-toggle {
+    background-color: var(--primary);
+    color: white;
+}
+.mobile-nav-toggle {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
 
 </style>
-

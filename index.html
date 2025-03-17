@@ -1688,42 +1688,73 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 <script>
-        let inactivityTimer;
-        let autoScrollInterval;
+let inactivityTimer;
+let autoScrollInterval;
+let userScrollingUp = false;
 
-        function startAutoScroll() {
-            // Clear any existing interval
+function startAutoScroll() {
+    // Don't start auto-scroll if user is scrolling up
+    if (userScrollingUp) return;
+    
+    // Clear any existing interval
+    clearInterval(autoScrollInterval);
+    
+    // Start continuous scrolling
+    autoScrollInterval = setInterval(() => {
+        // Get the contact section position
+        const contactSection = document.getElementById('contact');
+        const contactPosition = contactSection.getBoundingClientRect().top + window.scrollY;
+        
+        // Check if we've reached the contact section or bottom of page
+        if (window.scrollY >= contactPosition - 100 || 
+            window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            // Stop scrolling if at the contact section or bottom of the page
             clearInterval(autoScrollInterval);
-
-            // Start continuous scrolling
-            autoScrollInterval = setInterval(() => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    // Stop scrolling if at the bottom of the page
-                    clearInterval(autoScrollInterval);
-                } else {
-                    // Scroll down by 50px every 200ms
-                    window.scrollBy({ top: 50, behavior: 'smooth' });
-                }
-            }, 200);
+        } else {
+            // Scroll down by 50px every 200ms
+            window.scrollBy({ top: 50, behavior: 'smooth' });
         }
+    }, 200);
+}
 
-        function resetTimer() {
-            // Clear inactivity timer and auto-scroll interval
-            clearTimeout(inactivityTimer);
-            clearInterval(autoScrollInterval);
+function resetTimer() {
+    // Clear inactivity timer and auto-scroll interval
+    clearTimeout(inactivityTimer);
+    clearInterval(autoScrollInterval);
 
-            // Reset inactivity timer
-            inactivityTimer = setTimeout(startAutoScroll, 5000); // Start auto-scroll after 5 seconds of inactivity
-        }
+    // Only set a new timer if not scrolling up
+    if (!userScrollingUp) {
+        inactivityTimer = setTimeout(startAutoScroll, 5000);
+    }
+}
 
-        // Reset timer on user interaction (mouse movement, key presses, or touch)
-        document.addEventListener('mousemove', resetTimer);
-        document.addEventListener('keydown', resetTimer);
-        document.addEventListener('touchstart', resetTimer);
+// Detect when user is scrolling up
+document.addEventListener('wheel', function(e) {
+    if (e.deltaY < 0) {
+        // User is scrolling up
+        userScrollingUp = true;
+        clearInterval(autoScrollInterval);
+        clearTimeout(inactivityTimer);
+        
+        // Reset the flag after a delay
+        clearTimeout(window.scrollUpTimeout);
+        window.scrollUpTimeout = setTimeout(() => {
+            userScrollingUp = false;
+        }, 3000);
+    }
+});
 
-        // Start timer initially
-        resetTimer();
+// Reset timer on user interaction
+document.addEventListener('mousemove', resetTimer);
+document.addEventListener('keydown', resetTimer);
+document.addEventListener('touchstart', resetTimer);
+
+// Start timer initially
+resetTimer();
+
+
     </script>
+
 <!-- Footer -->
 <footer>
     <div class="footer-content">

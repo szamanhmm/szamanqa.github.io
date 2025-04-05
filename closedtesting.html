@@ -1,1 +1,376 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saifuz Zaman | Closed Testing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0073b1;
+            --primary-dark: #005582;
+            --secondary: #34495e;
+            --light: #f9f9f9;
+            --dark: #333;
+            --text: #555;
+            --border-radius: 8px;
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --accent: #ff9800;
+            --background: #ffffff;
+            --card-bg: #ffffff;
+            --footer-bg: #34495e;
+            --footer-text: #aaa;
+        }
+
+        .dark-mode {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --light: #1a1a1a;
+            --dark: #f5f5f5;
+            --text: #c5c5c5;
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            --background: #121212;
+            --card-bg: #1e1e1e;
+            --footer-bg: #1a1a1a;
+            --footer-text: #888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: white;
+            background: var(--primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .service-details {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .service-details h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-details ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-details ul li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .review-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .review-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><i class="fas fa-check-circle"></i> Saifuz Zaman</a>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Google Play Closed Testing Services</h1>
+            <p>Expert QA testing for your mobile applications</p>
+            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Order Now on Upwork</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="service-details">
+                <p>As an experienced and certified QA tester, I specialize in manual and functional testing. With a team of 12+ QA testers, I ensure 100% successful closed testing for your applications.</p>
+                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-details">
+                <h2>What You Receive:</h2>
+                <ul>
+                    <li>12+ testers with diverse devices and operating system versions</li>
+                    <li>14 days of uninterrupted testing and feedback (private ratings and reviews)</li>
+                    <li>Closed Testing Form Answers</li>
+                    <li>Assured privacy and security</li>
+                    <li>Guidance on the 2025 Play Store Submission Checklist</li>
+                    <li>App usage tracking with Android Digital Wellbeing feature</li>
+                </ul>
+                <p><strong>Note:</strong> Every tester's account, device, and IP address will be different from one another.</p>
+            </div>
+        </section>
+
+        <section id="stats">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="projectCount">0</div>
+                    <div class="stat-label">Closed Testing Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Expert Testers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2 class="section-title">Client Reviews</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <div class="review-content">"Saifuz provided excellent service. His team of testers were thorough and provided valuable feedback. Highly recommended!"</div>
+                    <div class="reviewer-name">- John D., Upwork Client</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">"The closed testing service was top-notch. Saifuz and his team helped us identify and fix critical issues before our app launch."</div>
+                    <div class="reviewer-name">- Sarah M., Fiverr Client</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">"Professional, timely, and detailed in their approach. Will definitely use their services again for future projects."</div>
+                    <div class="reviewer-name">- Alex K., Repeat Client</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Saifuz Zaman. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        function animateCount(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            function updateCount() {
+                start += increment;
+                element.textContent = Math.floor(start);
+
+                if (start < target) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = target + "+";
+                }
+            }
+
+            updateCount();
+        }
+
+        const projectCountElement = document.getElementById('projectCount');
+        animateCount(projectCountElement, 37, 2000);
+    </script>
+</body>
+</html>

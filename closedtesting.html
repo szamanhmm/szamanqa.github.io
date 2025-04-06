@@ -11,6 +11,8 @@
     <link rel="canonical" href="https://szamanqa.me/closedtesting">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Play Store Favicon -->
+    <link rel="icon" type="image/png" href="https://play.google.com/about/favicon.ico">
     <style>
         :root {
             --primary: #0073b1;
@@ -400,6 +402,36 @@
         .seo-tags {
             display: none;
         }
+
+        /* Highlighted Section */
+        .highlighted-section {
+            background: linear-gradient(rgba(0,115,177,0.05), rgba(0,115,177,0.1));
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 60px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .highlighted-section h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .highlighted-section .subheading {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .highlighted-section ul {
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
@@ -430,30 +462,6 @@
     </section>
 
     <div class="container">
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="service-details">
-                <p>As a certified & Top-Rated QA tester on Upwork, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
-                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Closed Testing Expert" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
-            </div>
-        </section>
-
-        <section id="services">
-            <h2 class="section-title">Our Services</h2>
-            <div class="service-details">
-                <h2>What You Receive:</h2>
-                <ul>
-                    <li>12+ testers with diverse devices and operating system versions</li>
-                    <li>14 days of uninterrupted testing and feedback (private ratings and reviews)</li>
-                    <li>Closed Testing Form Answers</li>
-                    <li>Assured privacy and security</li>
-                    <li>Guidance on the 2025 Play Store Submission Checklist</li>
-                    <li>App usage tracking with Android Digital Wellbeing feature</li>
-                </ul>
-                <p><strong>Note:</strong> Every tester's account, device, and IP address will be different from one another.</p>
-            </div>
-        </section>
-
         <section id="stats">
             <h2 class="section-title">Our Impact</h2>
             <div class="stats">
@@ -592,29 +600,45 @@
                         <li>Answer required questions about your closed test and app readiness</li>
                         <li>Submit your application and await approval (typically takes up to 72 hours)</li>
                     </ul>
-                    
-                    <h3>Our Professional Testing Service</h3>
-                    <ul>
-                        <li>As experienced and certified QA testers, we offer:
-                            <ul>
-                                <li>A dedicated team of 12+ testers with diverse devices and OS versions</li>
-                                <li>14 days of uninterrupted testing with detailed feedback and reviews</li>
-                                <li>Assistance with Closed Testing Form Answers</li>
-                                <li>Strict privacy and security protocols</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20193625.png?raw=true" alt="Closed Testing Service Team" class="blog-image">
-                    
-                    <h3>Why Choose Our Service</h3>
-                    <ul>
-                        <li>100% Guaranteed success when following our proven testing plan</li>
-                        <li>Timely delivery ensuring your app is Play Store-ready</li>
-                        <li>In-depth knowledge of app testing and Google Play policies</li>
-                        <li>Transparent communication throughout the process</li>
-                    </ul>
-                    
-                    <p>By following these steps, you can effectively manage closed testing for your app using the Google Play Console. Alternatively, you can <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="external-link" target="_blank">hire us through Upwork</a> to utilize our professional testing services, ensuring a smoother and more reliable public release. With our extensive experience and dedicated team of top-tier testers, we manage the entire process to deliver optimal results.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Highlighted Section - About Me and Services -->
+        <section id="about-and-services" class="highlighted-section">
+            <h2>About Me and Our Services</h2>
+            
+            <div>
+                <h3 class="subheading">About Me</h3>
+                <p>As a certified & Top-Rated QA tester on Upwork, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
+                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Closed Testing Expert" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
+            </div>
+            
+            <div>
+                <h3 class="subheading">Our Professional Testing Service</h3>
+                <p>We provide comprehensive testing solutions to ensure your app meets all Google Play requirements:</p>
+                <ul>
+                    <li>A dedicated team of 12+ testers with diverse devices and OS versions</li>
+                    <li>14 days of uninterrupted testing with detailed feedback and reviews</li>
+                    <li>Assistance with Closed Testing Form Answers</li>
+                    <li>Strict privacy and security protocols</li>
+                    <li>Guidance on the 2025 Play Store Submission Checklist</li>
+                    <li>App usage tracking with Android Digital Wellbeing feature</li>
+                </ul>
+                <p><strong>Note:</strong> Every tester's account, device, and IP address will be different from one another.</p>
+            </div>
+            
+            <div>
+                <h3 class="subheading">Why Choose Our Service</h3>
+                <ul>
+                    <li>100% Guaranteed success when following our proven testing plan</li>
+                    <li>Timely delivery ensuring your app is Play Store-ready</li>
+                    <li>In-depth knowledge of app testing and Google Play policies</li>
+                    <li>Transparent communication throughout the process</li>
+                </ul>
+                <p>By choosing our service, you save valuable time and resources while ensuring your app meets all necessary requirements for a successful Google Play launch.</p>
+                <div style="text-align: center; margin-top: 25px;">
+                    <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Our Testing Team</a>
                 </div>
             </div>
         </section>
@@ -634,9 +658,8 @@
                 </div>
             </div>
         </section>
-
-        <section id="reviews">
-   
+    </div>
+    
     <footer>
         <p>&copy; 2025 Saifuz Zaman | Professional Closed Testing Services | 12+ Expert Testers</p>
     </footer>

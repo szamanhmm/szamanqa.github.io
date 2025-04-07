@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Google Play Closed Testing Services with 12+ testers and escrow payment. Get production access for your Android app with expert beta testing 14 days">
+    <meta name="description" content="Professional Google Play Closed Testing Services with 12+ expert testers. Get guaranteed production access for your Android app with 14-day testing and escrow payment">
 
-    <meta name="keywords" content="closed testing, closed testing service, beta testers, 12 testers, 12 testers services, google play closed testing, 14 days, app testing">
+    <meta name="keywords" content="closed testing, closed testing service, beta testers, 12 testers, 12 testers services, google play closed testing, 14 days, app testing, android app testing">
     <meta name="author" content="Saifuz Zaman">
     <meta name="robots" content="index, follow">
-    <title>Closed Testing Service</title>
+    <title>Google Play Closed Testing Service | Expert Beta Testers | 14-Day Testing</title>
     <link rel="canonical" href="https://szamanqa.me/closedtesting">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Play Store Favicon -->
-  <link rel="icon" type="image/png" href="https://github.com/szamanhmm/szamanqa.github.io/raw/main/Screenshot%202025-04-07%20020353.png">
+    <link rel="icon" type="image/png" href="https://github.com/szamanhmm/szamanqa.github.io/raw/main/Screenshot%202025-04-07%20020353.png">
 
     <style>
         :root {
@@ -31,6 +33,7 @@
             --card-bg: #ffffff;
             --footer-bg: #34495e;
             --footer-text: #aaa;
+            --highlight-bg: #f1f8ff;
         }
 
         .dark-mode {
@@ -45,6 +48,7 @@
             --card-bg: #1e1e1e;
             --footer-bg: #1a1a1a;
             --footer-text: #888;
+            --highlight-bg: #1e2936;
         }
 
         * {
@@ -91,6 +95,22 @@
             align-items: center;
             gap: 10px;
             transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         .theme-toggle {
@@ -148,10 +168,30 @@
             text-decoration: none;
             border-radius: var(--border-radius);
             transition: var(--transition);
+            font-weight: 600;
         }
 
         .cta-button:hover {
             background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-cta {
+            background: var(--accent);
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-cta:hover {
+            background: #e08800;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .section-title {
@@ -159,33 +199,78 @@
             color: var(--dark);
             margin-bottom: 40px;
             text-align: center;
+            position: relative;
+            padding-bottom: 15px;
         }
 
-        .service-details {
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Services Section */
+        .services-panel {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .services-panel {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .service-card {
             background-color: var(--card-bg);
-            padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            margin-bottom: 40px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .service-details h2 {
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
             color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            padding-left: 0;
             margin-bottom: 20px;
         }
 
-        .service-details ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .service-details ul li {
+        .service-card ul li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
         }
 
-        .service-details ul li:before {
+        .service-card ul li:before {
             content: '\f00c';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
@@ -194,25 +279,51 @@
             color: var(--primary);
         }
 
+        .service-card .service-actions {
+            margin-top: auto;
+            text-align: center;
+        }
+
         .stats {
             display: flex;
             justify-content: space-around;
             margin-bottom: 60px;
+            flex-wrap: wrap;
         }
 
         .stat-item {
             text-align: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
+            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--dark);
+            font-weight: 500;
         }
 
         .reviews {
@@ -242,8 +353,63 @@
         footer {
             background-color: var(--footer-bg);
             color: var(--footer-text);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: var(--footer-text);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .copyright {
             text-align: center;
-            padding: 20px 0;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 768px) {
@@ -253,69 +419,67 @@
 
             .stats {
                 flex-direction: column;
-                gap: 30px;
             }
         }
 
-        /* Client Feedback Section */
-        #client-feedback {
-            padding: 50px 20px;
-            background-color: var(--light);
-            margin-bottom: 0;
-            transition: background-color 0.3s ease;
+        /* Blog Section Enhanced */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
-        #client-feedback h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--dark);
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        @media (min-width: 992px) {
+            .blog-container {
+                grid-template-columns: 3fr 1fr;
+            }
         }
 
-        .feedback-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .blog-main {
+            order: 2;
         }
 
-        .feedback-card {
-            background: var(--card-bg);
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            width: 300px;
-            max-width: 100%;
-            text-align: center;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        @media (min-width: 992px) {
+            .blog-main {
+                order: 1;
+            }
         }
 
-        .feedback-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        .blog-sidebar {
+            order: 1;
         }
 
-        .feedback-card img {
-            width: 100%;
-            border-radius: 8px;
-            max-width: 100%;
-            height: auto;
+        @media (min-width: 992px) {
+            .blog-sidebar {
+                order: 2;
+            }
         }
 
-        /* Blog Writing Section */
         .blog-section {
             background-color: var(--card-bg);
-            padding: 40px;
+            padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-section:hover {
+            transform: translateY(-5px);
         }
 
         .blog-section h2 {
             color: var(--primary);
             margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        .blog-section h3 {
+            color: var(--dark);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
         }
 
         .blog-section ul {
@@ -347,32 +511,17 @@
             color: var(--text);
         }
 
-        .blog-section .cta-button {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 16px;
-            color: white;
-            background: var(--primary);
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .blog-section .cta-button:hover {
-            background: var(--primary-dark);
-        }
-
         .blog-image {
             max-width: 100%;
             height: auto;
             border-radius: var(--border-radius);
             margin: 20px 0;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
-        .blog-section h3 {
-            color: var(--dark);
-            margin: 25px 0 15px;
+        .blog-image:hover {
+            transform: scale(1.02);
         }
 
         .blog-section .inner-list {
@@ -397,15 +546,122 @@
             text-decoration: underline;
         }
 
-        .blog-section-wrapper {
+        /* Table of Contents */
+        .toc {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
             margin-bottom: 30px;
+            position: sticky;
+            top: 100px;
         }
 
-        .seo-tags {
-            display: none;
+        .toc h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
         }
 
-        /* Highlighted Section */
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc ul li {
+            margin-bottom: 12px;
+        }
+
+        .toc ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+        }
+
+        .toc ul li a:hover {
+            background-color: var(--highlight-bg);
+            color: var(--primary);
+        }
+
+        /* Call to Action Box */
+        .cta-box {
+            background-color: var(--highlight-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px solid var(--primary);
+        }
+
+        .cta-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 20px;
+        }
+
+        /* Client Feedback Enhanced */
+        #client-feedback {
+            padding: 50px 20px;
+            background-color: var(--light);
+            transition: background-color 0.3s ease;
+        }
+
+        #client-feedback h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        .feedback-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feedback-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 300px;
+            max-width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feedback-card img {
+            width: 100%;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .feedback-card:hover img {
+            transform: scale(1.03);
+        }
+
+        /* New Highlighted Section Styles */
         .highlighted-section {
             background: linear-gradient(rgba(0,115,177,0.05), rgba(0,115,177,0.1));
             padding: 40px;
@@ -434,6 +690,111 @@
         .highlighted-section ul {
             margin-bottom: 25px;
         }
+
+        /* Floating Action Button */
+        .floating-action {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+            transition: all 0.3s ease;
+        }
+
+        .floating-action:hover {
+            background-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* SEO Hidden Tags */
+        .seo-tags {
+            display: none;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs span {
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
@@ -444,16 +805,29 @@
         <h2>12 Testers Closed Testing Services</h2>
         <h2>App Testing for Google Play Store</h2>
         <h2>Closed Testing Service Provider</h2>
-<h2>Closed Testing</h2>
-<h2>Closed Test</h2>
-<h2>12 tester</h2>
-<h2>12 testers</h2>
-<h2>14 days</h2>
+        <h2>Closed Testing</h2>
+        <h2>Closed Test</h2>
+        <h2>12 tester</h2>
+        <h2>12 testers</h2>
+        <h2>14 days</h2>
+        <h2>Android App Testing</h2>
+        <h2>Google Play Production Access</h2>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
     <header>
         <nav>
             <a href="#" class="logo"><i class="fas fa-check-circle"></i> Closed Testing</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#blog">Learning Guide</a>
+                <a href="#about-and-services">About</a>
+                <a href="#client-feedback">Client Feedbacks</a>
+            </div>
             <button id="themeToggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
@@ -463,42 +837,99 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Save Your Valuable Time and Money</h1>
-            <p>Expert Closed testing for your android app with 12+ qualified testers</p>
-            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Order Now on Upwork</a>
+            <p>Expert Closed Testing for your Android app with 12+ qualified testers</p>
+            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Order Now on Upwork <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
     <div class="container">
-        <section id="stats">
-            <h2 class="section-title">Our Impact</h2>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="projectCount">0</div>
-                    <div class="stat-label">Closed Testing Projects</div>
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-panel">
+                <div class="service-card">
+                    <h3><i class="fas fa-users-cog"></i> Expert Testing Team</h3>
+                    <ul>
+                        <li><strong>12+ Qualified Testers</strong> for comprehensive closed testing</li>
+                        <li>Each tester uses <strong>unique Android devices</strong> with different specifications</li>
+                        <li>Different Google accounts, unique IPs, and diverse locations</li>
+                        <li>Daily testing with detailed feedback for 14 days</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Testers</a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">12+</div>
-                    <div class="stat-label">Expert Testers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Success Rate</div>
+                
+                <div class="service-card">
+                    <h3><i class="fas fa-certificate"></i> Complete Testing Package</h3>
+                    <ul>
+                        <li><strong>100% Production Access Guaranteed</strong> after successful testing</li>
+                        <li>Closed Testing Form assistance and guidance</li>
+                        <li>Pre-launch report analysis and issues troubleshooting</li>
+                        <li>Escrow payment for your security and peace of mind</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">View Pricing</a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section id="stats">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram stat-icon"></i>
+                    <div class="stat-number" id="projectCount">0</div>
+                    <div class="stat-label">Closed Testing Projects</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Expert Testers</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle stat-icon"></i>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar-check stat-icon"></i>
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Testing Days</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3>Ready to Get Your App Approved?</h3>
+            <p>Start your closed testing today with our expert team and secure production access in just 14 days!</p>
+            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="service-cta">Order Closed Testing Service <i class="fas fa-angle-right"></i></a>
+        </div>
+
         <section id="blog">
             <h2 class="section-title">Learn: How to do a successful closed testing</h2>
-            <div class="blog-section-wrapper">
-                <div class="blog-section">
-                    <h2>1. Setting Up Closed Testing</h2>
-                    <p>Follow these essential steps to properly set up closed testing for your app and ensure it receives quality feedback before public release:</p>
+            
+            <div class="blog-container">
+                <div class="blog-main">
+                    <div class="breadcrumbs">
+                        <a href="#">Home</a>
+                        <span>/</span>
+                        <a href="#blog">Guide</a>
+                        <span>/</span>
+                        <span>How to do a successful closed testing</span>
+                    </div>
                     
-                    <h3>Create a Closed Testing Track</h3>
-                    <ul>
-                        <li>Log in to your <a href="https://play.google.com/console/developers" class="external-link" target="_blank">Google Play Console</a></li>
-                        <li>Navigate to <span class="highlight-text">Testing > Closed testing</span></li>
-                        <li>Click on <span class="highlight-text">Create track</span></li>
+                    <div class="blog-section" id="setting-up">
+                        <h2>1. Setting Up Closed Testing</h2>
+                        <p>Follow these essential steps to properly set up closed testing for your app and ensure it receives quality feedback before public release:</p>
+                        
+                        <h3>Create a Closed Testing Track</h3>
+                        <ul>
+                            <li>Log in to your <a href="https://play.google.com/console/developers" class="external-link" target="_blank">Google Play Console</a></li>
+                            <li>Navigate to <span class="highlight-text">Testing > Closed testing</span></li>
+                            <li>Click on <span class="highlight-text">Create track</span></li>
+                           
                         <li>Enter a Track name (e.g., "Beta Testers") and click <span class="highlight-text">Create track</span></li>
                     </ul>
                     <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20184909.png?raw=true" alt="Creating a Closed Testing Track in Google Play Console" class="blog-image">

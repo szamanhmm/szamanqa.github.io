@@ -84,6 +84,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
         }
 
         .logo {
@@ -97,9 +98,22 @@
             transition: color 0.3s ease;
         }
 
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 200;
+        }
+
         .nav-links {
             display: flex;
             gap: 20px;
+            transition: all 0.3s ease;
         }
 
         .nav-links a {
@@ -120,6 +134,45 @@
             font-size: 24px;
             cursor: pointer;
             transition: all 0.3s ease;
+        }
+
+        /* Mobile navigation styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                z-index: 90;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                padding: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
         }
 
         .container {
@@ -354,6 +407,7 @@
             background-color: var(--footer-bg);
             color: var(--footer-text);
             padding: 40px 0 20px;
+            text-align: center;
         }
 
         .footer-content {
@@ -393,6 +447,7 @@
             display: flex;
             gap: 15px;
             margin-top: 15px;
+            justify-content: center;
         }
 
         .social-links a {
@@ -795,54 +850,25 @@
         .breadcrumbs span {
             color: var(--text);
         }
-@media (max-width: 768px) {
-    /* Blog container needs to be more compact on mobile */
-    .blog-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-main {
-        order: 2;
-    }
-    
-    .blog-sidebar {
-        order: 1;
-    }
-    
-    /* Images should not overflow on mobile */
-    .blog-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    /* Better typography for mobile */
-    .blog-section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .blog-section h3 {
-        font-size: 1.3rem;
-    }
-    
-    /* Client feedback section */
-    .feedback-card {
-        width: 100%;
-    }
-    
-    /* Hero buttons should be full width on mobile */
-    .hero .cta-button {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
-    }
-    
-    /* CTA box improvements */
-    .cta-box .service-cta {
-        display: block;
-        text-align: center;
-        margin: 0 auto;
-    }
-}
+
+        /* Adding overlay for mobile menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 80;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -869,18 +895,29 @@
 
     <header>
         <nav>
-    <a href="#" class="logo"><i class="fas fa-check-circle"></i> Closed Testing</a>
-    <div class="nav-links">
-        <a href="#services">Hire</a>
-        <a href="#blog">Learning</a>
-        <a href="#about-and-services">About</a>
-        <a href="#client-feedback">Clients</a>
-    </div>
-    <button id="themeToggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </button>
-</nav>
+            <a href="#" class="logo"><i class="fas fa-check-circle"></i> Closed Testing</a>
+            
+            <div class="nav-container">
+                <button id="menuToggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#services">Hire</a>
+                    <a href="#blog">Learning</a>
+                    <a href="#about-and-services">About</a>
+                    <a href="#client-feedback">Clients</a>
+                </div>
+                
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <section class="hero">
         <div class="hero-content">
@@ -922,421 +959,433 @@
             </div>
         </section>
 
-        <section id="stats">
-            <h2 class="section-title">Our Impact</h2>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-project-diagram stat-icon"></i>
-                    <div class="stat-number" id="projectCount">0</div>
-                    <div class="stat-label">Closed Testing Projects</div>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users stat-icon"></i>
-                    <div class="stat-number">12+</div>
-                    <div class="stat-label">Expert Testers</div>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-check-circle stat-icon"></i>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-calendar-check stat-icon"></i>
-                    <div class="stat-number">14</div>
-                    <div class="stat-label">Testing Days</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Box -->
-        <div class="cta-box">
-            <h3>Ready to Get Your App Approved?</h3>
-            <p>Start your closed testing today with our expert team and secure production access in just 14 days!</p>
-            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="service-cta">Order Closed Testing Service <i class="fas fa-angle-right"></i></a>
+<section id="stats">
+    <h2 class="section-title">Our Impact</h2>
+    <div class="stats">
+        <div class="stat-item">
+            <i class="fas fa-project-diagram stat-icon"></i>
+            <div class="stat-number" id="projectCount">0</div>
+            <div class="stat-label">Closed Testing Projects</div>
         </div>
+        <div class="stat-item">
+            <i class="fas fa-users stat-icon"></i>
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Expert Testers</div>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-check-circle stat-icon"></i>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-calendar-check stat-icon"></i>
+            <div class="stat-number">14</div>
+            <div class="stat-label">Testing Days</div>
+        </div>
+    </div>
+</section>
 
-        <section id="blog">
-            <h2 class="section-title">Learn: How to do a successful closed testing</h2>
+<!-- CTA Box -->
+<div class="cta-box">
+    <h3>Ready to Get Your App Approved?</h3>
+    <p>Start your closed testing today with our expert team and secure production access in just 14 days!</p>
+    <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="service-cta">Order Closed Testing Service <i class="fas fa-angle-right"></i></a>
+</div>
+
+<section id="blog">
+    <h2 class="section-title">Learn: How to do a successful closed testing</h2>
+    
+    <div class="blog-container">
+        <div class="blog-main">
+            <div class="breadcrumbs">
+                <a href="#">Home</a>
+                <span>/</span>
+                <a href="#blog">Guide</a>
+                <span>/</span>
+                <span>How to do a successful closed testing</span>
+            </div>
             
-            <div class="blog-container">
-                <div class="blog-main">
-                    <div class="breadcrumbs">
-                        <a href="#">Home</a>
-                        <span>/</span>
-                        <a href="#blog">Guide</a>
-                        <span>/</span>
-                        <span>How to do a successful closed testing</span>
-                    </div>
-                    
-                    <div class="blog-section" id="setting-up">
-                        <h2>1. Setting Up Closed Testing</h2>
-                        <p>Follow these essential steps to properly set up closed testing for your app and ensure it receives quality feedback before public release:</p>
-                        
-                        <h3>Create a Closed Testing Track</h3>
+            <div class="blog-section" id="setting-up">
+                <h2>1. Setting Up Closed Testing</h2>
+                <p>Follow these essential steps to properly set up closed testing for your app and ensure it receives quality feedback before public release:</p>
+                
+                <h3>Create a Closed Testing Track</h3>
+                <ul>
+                    <li>Log in to your <a href="https://play.google.com/console/developers" class="external-link" target="_blank">Google Play Console</a></li>
+                    <li>Navigate to <span class="highlight-text">Testing > Closed testing</span></li>
+                    <li>Click on <span class="highlight-text">Create track</span></li>
+                    <li>Enter a Track name (e.g., "Beta Testers") and click <span class="highlight-text">Create track</span></li>
+                </ul>
+                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20184909.png?raw=true" alt="Creating a Closed Testing Track in Google Play Console" class="blog-image">
+                
+                <h3>Select Countries/Regions</h3>
+                <ul>
+                    <li>Go to the <span class="highlight-text">Countries/regions</span> tab</li>
+                    <li>Click on <span class="highlight-text">Add countries/regions</span></li>
+                    <li>Select desired countries (e.g., USA, Canada, Bangladesh) or choose <span class="highlight-text">Select all countries/regions</span></li>
+                    <li>Click <span class="highlight-text">Add</span></li>
+                </ul>
+                
+                <h3>Add Testers</h3>
+                <ul>
+                    <li>Navigate to the <span class="highlight-text">Testers</span> tab</li>
+                    <li>Under the "Testers" section, add testers via:</li>
+                    <li class="inner-list">Email:
                         <ul>
-                            <li>Log in to your <a href="https://play.google.com/console/developers" class="external-link" target="_blank">Google Play Console</a></li>
-                            <li>Navigate to <span class="highlight-text">Testing > Closed testing</span></li>
-                            <li>Click on <span class="highlight-text">Create track</span></li>
-                           
-                        <li>Enter a Track name (e.g., "Beta Testers") and click <span class="highlight-text">Create track</span></li>
-                    </ul>
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20184909.png?raw=true" alt="Creating a Closed Testing Track in Google Play Console" class="blog-image">
-                    
-                    <h3>Select Countries/Regions</h3>
-                    <ul>
-                        <li>Go to the <span class="highlight-text">Countries/regions</span> tab</li>
-                        <li>Click on <span class="highlight-text">Add countries/regions</span></li>
-                        <li>Select desired countries (e.g., USA, Canada, Bangladesh) or choose <span class="highlight-text">Select all countries/regions</span></li>
-                        <li>Click <span class="highlight-text">Add</span></li>
-                    </ul>
-                    
-                    <h3>Add Testers</h3>
-                    <ul>
-                        <li>Navigate to the <span class="highlight-text">Testers</span> tab</li>
-                        <li>Under the "Testers" section, add testers via:</li>
-                        <li class="inner-list">Email:
-                            <ul>
-                                <li>Click on <span class="highlight-text">Create email list</span></li>
-                                <li>Enter a List name (e.g., "Team_Saifuz")</li>
-                                <li>Add email addresses separated by commas or upload a CSV file</li>
-                                <li>Click <span class="highlight-text">Save changes</span></li>
-                            </ul>
-                        </li>
-                        <li class="inner-list">Google Groups:
-                            <ul>
-                                <li>Select <span class="highlight-text">Google Groups</span></li>
-                                <li>Enter the Google Group email addresses</li>
-                                <li>Click <span class="highlight-text">Save changes</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <h3>Prepare Your App Release</h3>
-                    <ul>
-                        <li>Go to <span class="highlight-text">Testing > Closed testing</span> and select your created track</li>
-                        <li>Click on <span class="highlight-text">Create new release</span></li>
-                        <li>Upload your app bundle (AAB) or APK file</li>
-                        <li>Provide release notes for your testers</li>
-                        <li>Click <span class="highlight-text">Save</span></li>
-                    </ul>
-                    
-                    <h3>Roll Out the Release to Testers</h3>
-                    <ul>
-                        <li>Verify all information is correct</li>
-                        <li>Click on <span class="highlight-text">Save and go to Publishing overview</span></li>
-                        <li>Send the changes for review</li>
-                        <li>Once approved, the app will be available to your testers</li>
-                    </ul>
-                </div>
-                
-                <div class="blog-section">
-                    <h2>2. Tester Participation</h2>
-                    <p>Manage your testers effectively to gather valuable feedback and insights about your application:</p>
-                     </ul>
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-07%20021513.png?raw=true" alt="Key Performance Indicators Dashboard" class="blog-image">
-                    <h3>Tester Onboarding</h3>
-                    <ul>
-                        <li>In the <span class="highlight-text">Testers</span> tab of your closed testing track, copy the <span class="highlight-text">Opt-in URL</span></li>
-                        <li>Share this link with your testers to allow them to opt-in and download your test app</li>
-                        <li>Testers will follow the link, accept the invitation by clicking "Become a tester", and download from the Play Store</li>
-                    </ul>
-                    
-                    <h3>Testing Guidelines</h3>
-                    <ul>
-                        <li>Testers should use the app daily and provide comprehensive feedback</li>
-                        <li>Each tester should use a unique Android device for more diverse testing</li>
-                        <li>Continuous testing and feedback are essential for a successful transition to production</li>
-                    </ul>
-                    
-                    <h3>Tips for Successful Testing</h3>
-                    <ul>
-                        <li>Pre-Launch Reports:
-                            <ul>
-                                <li>Review pre-launch reports under <span class="highlight-text">Testing > Pre-launch report > Overview</span></li>
-                                <li>Address issues related to stability, performance, and accessibility</li>
-                            </ul>
-                        </li>
-                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20185630.png?raw=true" alt="Pre-Launch Reports in Google Play Console" class="blog-image">
-                        
-                        <li>Unique Devices:
-                            <ul>
-                                <li>Ensure testers use unique devices and test daily</li>
-                                <li>Have testers explore as many app functionalities as possible</li>
-                            </ul>
-                        </li>
-                        
-                        <li>Monitor Key Performance Indicators (KPIs):
-                            <ul>
-                                <li>Enable KPIs in the dashboard (User acquisitions, Total installs, Audience growth rate)</li>
-                                <li>Track installation counts and user growth during testing</li>
-                            </ul>
-                        </li>
-                </div>
-                
-                <div class="blog-section">
-                    <h2>3. Transitioning to Production</h2>
-                    <p>After successful testing, follow these steps to move your app to production and make it available to the public:</p>
-                    
-                    <h3>Apply for Production Access</h3>
-                    <ul>
-                        <li>After at least 14 days of continuous closed testing with a minimum of 12 testers (at least 14 recommended, apply for production</li>
-                        <li>Go to your app's Dashboard in the Play Console</li>
-                        <li>Click on <span class="highlight-text">Apply for production</span></li>
-                        <li>Answer required questions about your closed test and app readiness</li>
-                        <li>Submit your application and await approval (typically takes up to 1 to 3 days)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Highlighted Section - About Me and Services -->
-        <section id="about-and-services" class="highlighted-section">
-            <h2>About Me and Our Services</h2>
-            
-            <div>
-                <h3 class="subheading">About Me</h3>
-                <p>As a certified & Top-Rated QA Tester <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6">(Upwork Profile)</a>, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
-                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Closed Testing Expert" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
-            </div>
-            
-            <div>
-                <h3 class="subheading">Our Professional Testing Service</h3>
-                <p>We provide comprehensive testing solutions to ensure your app meets all Google Play requirements:</p>
-                <ul>
-                    <li>A dedicated team of 12+ testers with diverse devices and OS versions</li>
-                    <li>14 days of uninterrupted testing with detailed feedback and reviews</li>
-                    <li>Assistance with Closed Testing Form Answers</li>
-                    <li>Strict privacy and security protocols</li>
-                    <li>Guidance on the 2025 Play Store Submission Checklist</li>
-                    <li>App usage tracking with Android Digital Wellbeing feature</li>
+                            <li>Click on <span class="highlight-text">Create email list</span></li>
+                            <li>Enter a List name (e.g., "Team_Saifuz")</li>
+                            <li>Add email addresses separated by commas or upload a CSV file</li>
+                            <li>Click <span class="highlight-text">Save changes</span></li>
+                        </ul>
+                    </li>
+                    <li class="inner-list">Google Groups:
+                        <ul>
+                            <li>Select <span class="highlight-text">Google Groups</span></li>
+                            <li>Enter the Google Group email addresses</li>
+                            <li>Click <span class="highlight-text">Save changes</span></li>
+                        </ul>
+                    </li>
                 </ul>
-                <p><strong>Note:</strong> Every tester's account, device, and IP address will be different from one another.</p>
+                
+                <h3>Prepare Your App Release</h3>
+                <ul>
+                    <li>Go to <span class="highlight-text">Testing > Closed testing</span> and select your created track</li>
+                    <li>Click on <span class="highlight-text">Create new release</span></li>
+                    <li>Upload your app bundle (AAB) or APK file</li>
+                    <li>Provide release notes for your testers</li>
+                    <li>Click <span class="highlight-text">Save</span></li>
+                </ul>
+                
+                <h3>Roll Out the Release to Testers</h3>
+                <ul>
+                    <li>Verify all information is correct</li>
+                    <li>Click on <span class="highlight-text">Save and go to Publishing overview</span></li>
+                    <li>Send the changes for review</li>
+                    <li>Once approved, the app will be available to your testers</li>
+                </ul>
             </div>
             
-            <div>
-                <h3 class="subheading">Why Choose Our Service</h3>
+            <div class="blog-section">
+                <h2>2. Tester Participation</h2>
+                <p>Manage your testers effectively to gather valuable feedback and insights about your application:</p>
+                
+                <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-07%20021513.png?raw=true" alt="Key Performance Indicators Dashboard" class="blog-image">
+                
+                <h3>Tester Onboarding</h3>
                 <ul>
-                    <li>100% Guaranteed success when following our proven testing plan</li>
-                    <li>Timely delivery ensuring your app is Play Store-ready</li>
-                    <li>In-depth knowledge of app testing and Google Play policies</li>
-                    <li>Transparent communication throughout the process</li>
+                    <li>In the <span class="highlight-text">Testers</span> tab of your closed testing track, copy the <span class="highlight-text">Opt-in URL</span></li>
+                    <li>Share this link with your testers to allow them to opt-in and download your test app</li>
+                    <li>Testers will follow the link, accept the invitation by clicking "Become a tester", and download from the Play Store</li>
                 </ul>
-                <p>By choosing our service, you save valuable time and resources while ensuring your app meets all necessary requirements for a successful Google Play launch.</p>
-                <div style="text-align: center; margin-top: 25px;">
-                    <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Our Testing Team</a>
-                </div>
+                
+                <h3>Testing Guidelines</h3>
+                <ul>
+                    <li>Testers should use the app daily and provide comprehensive feedback</li>
+                    <li>Each tester should use a unique Android device for more diverse testing</li>
+                    <li>Continuous testing and feedback are essential for a successful transition to production</li>
+                </ul>
+                
+                <h3>Tips for Successful Testing</h3>
+                <ul>
+                    <li>Pre-Launch Reports:
+                        <ul>
+                            <li>Review pre-launch reports under <span class="highlight-text">Testing > Pre-launch report > Overview</span></li>
+                            <li>Address issues related to stability, performance, and accessibility</li>
+                        </ul>
+                    </li>
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-04-05%20185630.png?raw=true" alt="Pre-Launch Reports in Google Play Console" class="blog-image">
+                    
+                    <li>Unique Devices:
+                        <ul>
+                            <li>Ensure testers use unique devices and test daily</li>
+                            <li>Have testers explore as many app functionalities as possible</li>
+                        </ul>
+                    </li>
+                    
+                    <li>Monitor Key Performance Indicators (KPIs):
+                        <ul>
+                            <li>Enable KPIs in the dashboard (User acquisitions, Total installs, Audience growth rate)</li>
+                            <li>Track installation counts and user growth during testing</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </section>
+            
+            <div class="blog-section">
+                <h2>3. Transitioning to Production</h2>
+                <p>After successful testing, follow these steps to move your app to production and make it available to the public:</p>
+                
+                <h3>Apply for Production Access</h3>
+                <ul>
+                    <li>After at least 14 days of continuous closed testing with a minimum of 12 testers (at least 14 recommended), apply for production</li>
+                    <li>Go to your app's Dashboard in the Play Console</li>
+                    <li>Click on <span class="highlight-text">Apply for production</span></li>
+                    <li>Answer required questions about your closed test and app readiness</li>
+                    <li>Submit your application and await approval (typically takes up to 1 to 3 days)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Blog Sidebar -->
+        <div class="blog-sidebar">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#setting-up">1. Setting Up Closed Testing</a></li>
+                    <li><a href="#tester-participation">2. Tester Participation</a></li>
+                    <li><a href="#transitioning">3. Transitioning to Production</a></li>
+                </ul>
+            </div>
+            
+            <!-- CTA in Sidebar -->
+            <div class="cta-box">
+                <h3>Need Expert Help?</h3>
+                <p>Let our professional team handle the closed testing process for you!</p>
+                <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Us Now</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Client Feedback Section -->
-        <section id="client-feedback">
-            <h2>What My Clients Say</h2>
-            <div class="feedback-container">
-                <div class="feedback-card">
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163925.png?raw=true" alt="Client Feedback 1 - Closed Testing Service Review">
-                </div>
-                <div class="feedback-card">
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163943.png?raw=true" alt="Client Feedback 2 - Beta Testing Testimonial">
-                </div>
-                <div class="feedback-card">
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20164004.png?raw=true" alt="Client Feedback 3 - App Testing Review">
-                </div>
-            </div>
-        </section>
+<!-- New Highlighted Section - About Me and Services -->
+<section id="about-and-services" class="highlighted-section">
+    <h2>About Me and Our Services</h2>
+    
+    <div>
+        <h3 class="subheading">About Me</h3>
+        <p>As a certified & Top-Rated QA Tester <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6">(Upwork Profile)</a>, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
+        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Closed Testing Expert" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
     </div>
     
-    <footer>
+    <div>
+        <h3 class="subheading">Our Professional Testing Service</h3>
+        <p>We provide comprehensive testing solutions to ensure your app meets all Google Play requirements:</p>
+        <ul>
+            <li>A dedicated team of 12+ testers with diverse devices and OS versions</li>
+            <li>14 days of uninterrupted testing with detailed feedback and reviews</li>
+            <li>Assistance with Closed Testing Form Answers</li>
+            <li>Strict privacy and security protocols</li>
+            <li>Guidance on the 2025 Play Store Submission Checklist</li>
+            <li>App usage tracking with Android Digital Wellbeing feature</li>
+        </ul>
+        <p><strong>Note:</strong> Every tester's account, device, and IP address will be different from one another.</p>
+    </div>
+    
+    <div>
+        <h3 class="subheading">Why Choose Our Service</h3>
+        <ul>
+            <li>100% Guaranteed success when following our proven testing plan</li>
+            <li>Timely delivery ensuring your app is Play Store-ready</li>
+            <li>In-depth knowledge of app testing and Google Play policies</li>
+            <li>Transparent communication throughout the process</li>
+        </ul>
+        <p>By choosing our service, you save valuable time and resources while ensuring your app meets all necessary requirements for a successful Google Play launch.</p>
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Our Testing Team</a>
+        </div>
+    </div>
+</section>
+
+<!-- Client Feedback Section -->
+<section id="client-feedback">
+    <h2>What My Clients Say</h2>
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163925.png?raw=true" alt="Client Feedback 1 - Closed Testing Service Review">
+        </div>
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163943.png?raw=true" alt="Client Feedback 2 - Beta Testing Testimonial">
+        </div>
+        <div class="feedback-card">
+            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20164004.png?raw=true" alt="Client Feedback 3 - App Testing Review">
+        </div>
+    </div>
+</section>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#blog">Learning Guide</a></li>
+                <li><a href="#about-and-services">About Us</a></li>
+                <li><a href="#client-feedback">Client Testimonials</a></li>
+            </ul>
+
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" target="_blank" rel="noopener noreferrer">Upwork Messages</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copyright">
         <p>&copy; 2025 Saifuz Zaman | Professional Closed Testing Services | 12+ Expert Testers</p>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            updateThemeIcon();
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        updateThemeIcon();
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        updateThemeIcon();
+        
+        // Save theme preference
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    function updateThemeIcon() {
+        const icon = themeToggle.querySelector('i');
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+    }
+
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    });
+
+    menuOverlay.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking a nav link
+    const mobileLinks = navLinks.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuOverlay.classList.remove('active');
         });
+    });
 
-        function updateThemeIcon() {
-            const icon = themeToggle.querySelector('i');
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
+    // Animated counter for project count
+    function animateCount(element, target, duration) {
+        let start = 0;
+        const increment = target / (duration / 16);
+
+        function updateCount() {
+            start += increment;
+            element.textContent = Math.floor(start);
+
+            if (start < target) {
+                requestAnimationFrame(updateCount);
             } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
+                element.textContent = target + "+";
             }
         }
 
-        function animateCount(element, target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16);
+        updateCount();
+    }
 
-            function updateCount() {
-                start += increment;
-                element.textContent = Math.floor(start);
+    // Initialize animation when element is in viewport
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const projectCountElement = document.getElementById('projectCount');
+                animateCount(projectCountElement, 37, 4000);
+                observer.unobserve(entry.target);
+            }
+        });
+    }
 
-                if (start < target) {
-                    requestAnimationFrame(updateCount);
-                } else {
-                    element.textContent = target + "+";
+    // Create intersection observer for stats section
+    const statsSection = document.getElementById('stats');
+    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.2 });
+    observer.observe(statsSection);
+
+    // Progress bar on scroll
+    window.onscroll = function() {
+        // Progress bar
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+        
+        // Back to top button
+        const backToTopButton = document.getElementById("backToTop");
+        if (winScroll > 300) {
+            backToTopButton.classList.add("visible");
+        } else {
+            backToTopButton.classList.remove("visible");
+        }
+    };
+
+    // Back to top functionality
+    document.getElementById("backToTop").addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // Add structured data for SEO
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Google Play Closed Testing Services",
+        "description": "Professional closed testing services with 12+ testers for Google Play app submissions.",
+        "provider": {
+            "@type": "Person",
+            "name": "Saifuz Zaman",
+            "url": "https://szamanqa.me/closedtesting"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "99.99",
+            "priceCurrency": "USD"
+        }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             }
-
-            updateCount();
-        }
-
-        const projectCountElement = document.getElementById('projectCount');
-        animateCount(projectCountElement, 37, 4000);
-
-        // Add structured data for SEO
-        const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Google Play Closed Testing Services",
-            "description": "Professional closed testing services with 12+ testers for Google Play app submissions.",
-            "provider": {
-                "@type": "Person",
-                "name": "Saifuz Zaman",
-                "url": "https://szamanqa.me/closedtesting"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "99.99",
-                "priceCurrency": "USD"
-            }
-        };
-
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(structuredData);
-        document.head.appendChild(script);
-/* Mobile menu styles */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: var(--primary);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    nav {
-        position: relative;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--card-bg);
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        box-shadow: var(--shadow);
-        z-index: 100;
-        display: none;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
-    }
-    
-    .nav-links.show {
-        display: flex;
-    }
-    
-    .nav-links a {
-        padding: 15px;
-        width: 100%;
-    }
-    
-    /* Fix hero section on mobile */
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    /* Responsive stats section */
-    .stats {
-        flex-direction: column;
-    }
-    
-    .stat-item {
-        margin-bottom: 15px;
-    }
-    
-    /* Better grid for services section */
-    .services-panel {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Better padding for blog sections */
-    .blog-section {
-        padding: 20px 15px;
-    }
-    
-    /* Fix for TOC */
-    .toc {
-        position: static;
-    }
-    
-    /* Better spacing for footer */
-    .footer-section {
-        margin-bottom: 30px;
-    }
-}
-// Mobile menu toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    const icon = menuToggle.querySelector('i');
-    if (navLinks.classList.contains('show')) {
-        icon.classList.replace('fa-bars', 'fa-times');
-    } else {
-        icon.classList.replace('fa-times', 'fa-bars');
-    }
-});
-
-// Close menu when clicking a nav link
-const navLinkElements = document.querySelectorAll('.nav-links a');
-navLinkElements.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-        menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        });
     });
-});
-
-// Progress bar functionality
-window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById('progressBar').style.width = scrolled + '%';
-});
-
-// Add smooth scrolling for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (this.getAttribute('href') !== '#') {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-});
-    </script>
-</body>
+   </script>
+ </body>
 </html>
+  

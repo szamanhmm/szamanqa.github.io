@@ -869,6 +869,30 @@
             opacity: 1;
             visibility: visible;
         }
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+/* Center the theme toggle using absolute positioning */
+.theme-toggle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ensure logo and menu-toggle are not affected by absolute positioning */
+.logo {
+    z-index: 1;
+}
+
+.menu-toggle {
+    z-index: 1;
+}
+
     </style>
 </head>
 <body>
@@ -893,28 +917,34 @@
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <header>
-        <nav>
+  <header>
+    <nav>
+        <div class="nav-container">
+            <!-- Left: Logo -->
             <a href="#" class="logo"><i class="fas fa-check-circle"></i> Closed Testing</a>
-            
-            <div class="nav-container">
-                <button id="menuToggle" class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <div class="nav-links" id="navLinks">
-                    <a href="#services">Hire</a>
-                    <a href="#blog">Learning</a>
-                    <a href="#about-and-services">About</a>
-                    <a href="#client-feedback">Clients</a>
-                </div>
-                
-                <button id="themeToggle" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+
+            <!-- Center: Theme Toggle -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <!-- Right: Menu Toggle -->
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Hidden navigation links -->
+        <div class="nav-links" id="navLinks">
+            <a href="#services">Hire</a>
+            <a href="#blog">Learning</a>
+            <a href="#about-and-services">About</a>
+            <a href="#client-feedback">Clients</a>
+        </div>
+    </nav>
+</header>
+
+
 
     <!-- Mobile Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -1110,6 +1140,15 @@
                     </li>
                 </ul>
             </div>
+ 
+            <!-- CTA in Sidebar -->
+            <div class="cta-box">
+                <h3>Need Expert Help?</h3>
+                <p>Let our professional team handle the closed testing process for you!</p>
+                <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Us Now</a>
+            </div>
+        </div>
+    </div>
             
             <div class="blog-section">
                 <h2>3. Transitioning to Production</h2>
@@ -1126,26 +1165,6 @@
             </div>
         </div>
         
-        <!-- Blog Sidebar -->
-        <div class="blog-sidebar">
-            <!-- Table of Contents -->
-            <div class="toc">
-                <h3>Quick Navigation</h3>
-                <ul>
-                    <li><a href="#setting-up">1. Setting Up Closed Testing</a></li>
-                    <li><a href="#tester-participation">2. Tester Participation</a></li>
-                    <li><a href="#transitioning">3. Transitioning to Production</a></li>
-                </ul>
-            </div>
-            
-            <!-- CTA in Sidebar -->
-            <div class="cta-box">
-                <h3>Need Expert Help?</h3>
-                <p>Let our professional team handle the closed testing process for you!</p>
-                <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Us Now</a>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- New Highlighted Section - About Me and Services -->
@@ -1221,7 +1240,7 @@
 
             <h3>Contact</h3>
             <ul>
-                <li><a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" target="_blank" rel="noopener noreferrer">Upwork Messages</a></li>
+                <li><a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" target="_blank" rel="noopener noreferrer">Upwork Messages</a></li>
             </ul>
         </div>
     </div>
@@ -1385,6 +1404,7 @@
             }
         });
     });
+
    </script>
  </body>
 </html>

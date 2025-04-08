@@ -892,6 +892,37 @@
 .menu-toggle {
     z-index: 1;
 }
+/* Theme toggle default styling (centered on larger screens) */
+.theme-toggle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+/* Responsive Fix: Stack right-side icons in mobile */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .theme-toggle {
+        position: static;
+        transform: none;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .menu-toggle {
+        margin-left: 10px;
+    }
+}
 
     </style>
 </head>
@@ -957,37 +988,6 @@
         </div>
     </section>
 
-    <div class="container">
-        <section id="services">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-panel">
-                <div class="service-card">
-                    <h3><i class="fas fa-users-cog"></i> Expert Testing Team</h3>
-                    <ul>
-                        <li><strong>12+ Qualified Testers</strong> for comprehensive closed testing</li>
-                        <li>Each tester uses <strong>unique Android devices</strong> with different specifications</li>
-                        <li>Different Google accounts, unique IPs, and diverse locations</li>
-                        <li>Daily testing with detailed feedback for 14 days</li>
-                    </ul>
-                    <div class="service-actions">
-                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Testers</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <h3><i class="fas fa-certificate"></i> Complete Testing Package</h3>
-                    <ul>
-                        <li><strong>100% Production Access Guaranteed</strong> after successful testing</li>
-                        <li>Closed Testing Form assistance and guidance</li>
-                        <li>Pre-launch report analysis and issues troubleshooting</li>
-                        <li>Escrow payment for your security and peace of mind</li>
-                    </ul>
-                    <div class="service-actions">
-                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">View Pricing</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 <section id="stats">
     <h2 class="section-title">Our Impact</h2>
@@ -1006,13 +1006,6 @@
             <i class="fas fa-check-circle stat-icon"></i>
             <div class="stat-number">100%</div>
             <div class="stat-label">Success Rate</div>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-calendar-check stat-icon"></i>
-            <div class="stat-number">14</div>
-            <div class="stat-label">Testing Days</div>
-        </div>
-    </div>
 </section>
 
 <!-- CTA Box -->
@@ -1167,19 +1160,51 @@
         
 </section>
 
+    <div class="container">
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-panel">
+                <div class="service-card">
+                    <h3><i class="fas fa-users-cog"></i> Expert Testing Team</h3>
+                    <ul>
+                        <li><strong>12+ Qualified Testers</strong>
+                       <li><strong>Unique Testers with Android devices</strong>
+                        <li>Daily usages tracking and testing with detailed <strong>feedback<strong></li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">Hire Testers</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <h3><i class="fas fa-certificate"></i> Complete Testing Package</h3>
+                    <ul>
+                        <li><strong>100% Production Access Guaranteed</strong> after successful testing</li>
+                        <li>Closed Testing Form assistance and guidance</li>
+                        <li>Pre-launch report analysis and issues troubleshooting</li>
+                        <li>Escrow payment for your security and peace of mind</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="https://www.upwork.com/services/product/development-it-20-testers-for-google-play-closed-testing-unique-20-beta-testers-14-days-1833513072827237583?ref=fl_profile" class="cta-button">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 <!-- New Highlighted Section - About Me and Services -->
 <section id="about-and-services" class="highlighted-section">
     <h2>About Me and Our Services</h2>
     
     <div>
         <h3 class="subheading">About Me</h3>
-        <p>As a certified & Top-Rated QA Tester <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6">(Upwork Profile)</a>, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
+        <p>As a certified & Top-Rated QA Tester </strong> on 
+        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" target="_blank" style="color: var(--primary); text-decoration: underline;">
+            Upwork</a>, I specialize in manual and functional testing. With a team of 12+ Beta QA testers, I ensure 100% successful closed testing for your applications.</p>
         <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Closed Testing Expert" style="max-width: 200px; border-radius: 50%; margin: 20px auto; display: block;">
     </div>
     
     <div>
-        <h3 class="subheading">Our Professional Testing Service</h3>
-        <p>We provide comprehensive testing solutions to ensure your app meets all Google Play requirements:</p>
+        <h3 class="subheading">Our Closed Testing Service</h3>
+        <p>We provide closed testing solutions to gain google play store production access:</p>
         <ul>
             <li>A dedicated team of 12+ testers with diverse devices and OS versions</li>
             <li>14 days of uninterrupted testing with detailed feedback and reviews</li>
@@ -1195,7 +1220,7 @@
         <h3 class="subheading">Why Choose Our Service</h3>
         <ul>
             <li>100% Guaranteed success when following our proven testing plan</li>
-            <li>Timely delivery ensuring your app is Play Store-ready</li>
+            <li>Timely planning and delivery ensuring your app is Play Store-ready</li>
             <li>In-depth knowledge of app testing and Google Play policies</li>
             <li>Transparent communication throughout the process</li>
         </ul>

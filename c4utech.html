@@ -129,8 +129,44 @@
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
-            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 35, 41, 0.7);
+            z-index: -1;
+        }
+
+        .light-theme .hero-overlay {
+            background: rgba(248, 249, 250, 0.8);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -140,15 +176,23 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero .tagline {
             font-size: 1.3rem;
-            color: var(--text-gray);
+            color: var(--text-light);
             margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+        }
+
+        .hero .description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
         }
 
         .cta-button {
@@ -435,9 +479,11 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <div class="logo-img">C4U</div>
-                <span>C4U Tech</span>
-            </a>
+    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/c4utech%20logo.png?raw=true" 
+         alt="C4U Logo" class="logo-img" />
+    <span>C4U Tech</span>
+</a>
+
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
@@ -557,7 +603,7 @@
                 <div class="contact-content scroll-animate">
                     <h2 class="section-title">💼 Our Mission</h2>
                     <p>To empower businesses and entrepreneurs by providing innovative tech solutions that drive results and create lasting impact.</p>
-                    <a href="mailto:contact.szaman@gmail.com" class="cta-button">Get Started Today</a>
+                    <a href="mailto:contact@c4utech.com" class="cta-button">Get Started Today</a>
                 </div>
             </div>
         </section>
@@ -567,10 +613,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="logo-img">C4U</div>
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/c4utech%20logo.png?raw=true" 
+                         alt="C4U Logo" class="logo-img" />
                     <span style="margin-left: 10px;">C4U Tech</span>
                 </div>
-                <p class="footer-text">&copy; 2024 C4U Tech. </p>
+                <p class="footer-text">&copy; 2024 C4U Tech. Building Tomorrow's Technology, Today.</p>
             </div>
         </div>
     </footer>

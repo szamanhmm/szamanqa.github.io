@@ -1,12 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saifuz Zaman | SQA | AI Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Saifuz Zaman - Top-Rated SQA Tester | Software Quality Assurance | AI Project Testing Expert</title>
+    <meta name="description" content="Saifuz Zaman is a top-rated SQA Tester on Upwork with 2+ years of experience in manual testing, API validation, and AI project testing. View my portfolio of 33+ tested applications and comprehensive testing services.">
+    <meta name="keywords" content="SQA tester, software quality assurance, manual testing, API testing, AI project testing, QA engineer, Upwork tester, functional testing, bug tracking, test automation">
+    <meta name="author" content="Saifuz Zaman">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Saifuz Zaman - Top-Rated SQA Tester | Software Quality Assurance Expert">
+    <meta property="og:description" content="Top-rated SQA Tester specializing in manual testing, API validation, and AI project testing. 33+ tested applications with comprehensive testing services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saifuz Zaman - Top-Rated SQA Tester">
+    <meta name="twitter:description" content="Top-rated SQA Tester with 2+ years of experience in quality assurance and testing.">
+    <meta name="twitter:image" content="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Saifuz Zaman",
+        "jobTitle": "SQA Tester & Software Quality Assurance Engineer",
+        "description": "Top-rated SQA Tester specializing in manual testing, API validation, and AI project testing",
+        "url": "https://yourwebsite.com",
+        "image": "https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true",
+        "email": "contact.szaman@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Feni",
+            "addressCountry": "Bangladesh"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/saifuzzaman-chayan/",
+            "https://github.com/szamanhmm",
+            "https://www.upwork.com/freelancers/~017c08c6bfe9705ad6"
+        ],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Computer Science and Engineering"
+        },
+        "knowsAbout": [
+            "Manual Testing",
+            "API Testing",
+            "Test Automation",
+            "Quality Assurance",
+            "Bug Tracking",
+            "AI Project Testing"
+        ]
+    }
+    </script>
+    
     <style>
         :root {
             --primary: #0073b1;
@@ -204,6 +269,58 @@
             margin-bottom: 20px;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .animated-name {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .animated-name::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-left: 3px solid var(--accent);
+            background-color: rgba(0,0,0,0.7);
+            left: 0;
+            top: 0;
+            animation: typing 3s steps(30) forwards;
+        }
+
+        @keyframes typing {
+            to {
+                left: 100%;
+                width: 0;
+            }
+        }
+
+        .animated-name span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.3s forwards, colorCycle 4s infinite alternate;
+            animation-delay: calc(var(--char-index) * 0.1s), calc(var(--char-index) * 0.1s + 3s);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes colorCycle {
+            0% { color: white; }
+            25% { color: #f8f9fa; }
+            50% { color: #e6f7ff; }
+            75% { color: #f8f9fa; }
+            100% { color: white; }
         }
 
         .hero p {
@@ -519,7 +636,7 @@
             background-color: var(--card-bg);
             border: 4px solid var(--primary);
             border-radius: 50%;
-top: 20px;
+            top: 20px;
             z-index: 1;
             transition: all 0.3s ease;
         }
@@ -538,7 +655,7 @@ top: 20px;
         }
 
         .timeline-content {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 20px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -575,6 +692,108 @@ top: 20px;
             margin-bottom: 5px;
         }
 
+        /* Project Stats Container */
+        .project-stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 40px 20px;
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 28px;
+            width: 240px;
+            color: #1e3a8a;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .stat-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .stat-card.mobile {
+            background: linear-gradient(165deg, #ffffff, #e8f5e9);
+        }
+
+        .stat-card.web {
+            background: linear-gradient(165deg, #ffffff, #e3f2fd);
+        }
+
+        .icon {
+            margin-bottom: 20px;
+            color: #2e7d32;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .count-wrapper {
+            font-size: 56px;
+            font-weight: 700;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            color: #1e3a8a;
+            letter-spacing: -1px;
+        }
+
+        .count {
+            display: inline-block;
+            position: relative;
+        }
+
+        .plus {
+            font-size: 32px;
+            margin-left: 5px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .label {
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            color: #4a5568;
+            text-transform: uppercase;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -583,7 +802,7 @@ top: 20px;
         }
 
         .project-card {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -676,68 +895,6 @@ top: 20px;
             align-self: flex-start;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            background-color: #f5f9fc;
-            padding: 60px 0;
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Client Feedback Section */
-        #client-feedback {
-            padding: 50px 20px;
-            background-color: #f8f9fa;
-            margin-bottom: 0;
-        }
-#client-feedback h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--dark); /* Change from #333 to var(--dark) */
-    margin-bottom: 30px;
-}
-
-        .feedback-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feedback-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            max-width: 100%;
-            text-align: center;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-
-        .feedback-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .feedback-card img {
-            width: 100%;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .feedback-card:hover img {
-            filter: brightness(1.05);
-        }
-
         /* Certifications Section */
         .certifications-grid {
             display: grid;
@@ -746,7 +903,7 @@ top: 20px;
         }
 
         .certification-card {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -783,17 +940,68 @@ top: 20px;
             margin-bottom: 20px;
         }
 
+        /* Client Feedback Section */
+        #client-feedback {
+            padding: 50px 20px;
+            background-color: var(--light);
+            margin-bottom: 0;
+        }
+
+        #client-feedback h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .feedback-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feedback-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .feedback-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feedback-card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-card:hover img {
+            filter: brightness(1.05);
+        }
+
         /* Contact Section */
         #contact {
             padding: 50px 20px;
             margin: 0;
-            background-color: #f8f9fa;
+            background-color: var(--light);
         }
 
         #contact h2 {
             font-size: 2rem;
             font-weight: bold;
-            color: #333;
+            color: var(--dark);
             margin-bottom: 20px;
             position: relative;
         }
@@ -803,7 +1011,7 @@ top: 20px;
             display: block;
             width: 50px;
             height: 4px;
-            background-color: #007bff;
+            background-color: var(--primary);
             margin: 10px auto 0;
             border-radius: 2px;
         }
@@ -818,7 +1026,7 @@ top: 20px;
         }
 
         .contact-card {
-            background: #fff;
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
@@ -877,7 +1085,7 @@ top: 20px;
             gap: 15px;
             font-size: 1.1rem;
             margin: 15px 0;
-            color: #333;
+            color: var(--dark);
         }
 
         .contact-detail i {
@@ -973,7 +1181,7 @@ top: 20px;
         }
 
         .footer-content p {
-            color: #aaa;
+            color: var(--footer-text);
             margin: 0;
         }
 
@@ -1018,6 +1226,50 @@ top: 20px;
             transform: translateY(-5px);
         }
 
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+            border: none;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .sun-icon, .moon-icon {
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+
+        .sun-icon {
+            color: #ff9800;
+            transform: translateY(0);
+        }
+
+        .moon-icon {
+            color: #0073b1;
+            transform: translateY(40px);
+        }
+
+        body.dark-mode .dark-mode-toggle .sun-icon {
+            transform: translateY(40px);
+        }
+
+        body.dark-mode .dark-mode-toggle .moon-icon {
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 992px) {
             .about-grid {
@@ -1049,14 +1301,10 @@ top: 20px;
                 left: 20px !important;
                 right: auto !important;
             }
-
-            .testimonial-slide {
-                flex: 0 0 calc(50% - 20px);
-            }
         }
 
         @media screen and (max-width: 768px) {
-            .hero h1 {
+            .hero h1, .animated-name {
                 font-size: 2.5rem;
             }
 
@@ -1071,7 +1319,7 @@ top: 20px;
                 top: 80px;
                 left: 0;
                 right: 0;
-                background-color: white;
+                background-color: var(--card-bg);
                 padding: 20px;
                 box-shadow: var(--shadow);
                 z-index: 100;
@@ -1095,12 +1343,22 @@ top: 20px;
                 max-width: 400px;
             }
 
-            .testimonial-slide {
-                flex: 0 0 calc(100% - 20px);
-            }
-
             .contact-card {
                 width: 90%;
+            }
+
+            .project-stats-container {
+                gap: 25px;
+            }
+
+            .stat-card {
+                width: 100%;
+                max-width: 280px;
+                padding: 28px 20px;
+            }
+
+            .count-wrapper {
+                font-size: 48px;
             }
         }
 
@@ -1127,19 +1385,17 @@ top: 20px;
                 text-align: center;
             }
         }
-
     </style>
-
 </head>
 
 <body>
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
     <!-- Header & Navigation -->
     <header>
-        <nav>
-            <a href="#" class="logo"><i class="fas fa-check-circle"></i> Saifuz Zaman</a>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#" class="logo" aria-label="Saifuz Zaman Home"><i class="fas fa-check-circle"></i> Saifuz Zaman</a>
             <div class="nav-links" id="navLinks">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -1149,118 +1405,59 @@ top: 20px;
                 <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="mobile-nav-toggle" id="navToggle">
+            <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
-<button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-</button>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
         </nav>
-
- <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    
-    // Check for saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-    }
-    
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        
-        // Save preference
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const nameElement = document.querySelector('.animated-name');
-    const text = nameElement.textContent;
-    nameElement.innerHTML = '';
-    
-    // Create spans for each character, preserving spaces
-    for (let i = 0; i < text.length; i++) {
-        const span = document.createElement('span');
-        // If it's a space, use a non-breaking space
-        if (text[i] === ' ') {
-            span.innerHTML = '&nbsp;';
-        } else {
-            span.textContent = text[i];
-        }
-        span.style.setProperty('--char-index', i);
-        nameElement.appendChild(span);
-    }
-});
-
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    const links = document.querySelectorAll('.nav-links a'); // Select all navigation links
-
-    navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Add event listener to each link
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active'); // Close the menu
-        });
-    });
-
-</script>
     </header>
 
-   <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
         <div class="hero-content">
-    <h1 class="animated-name">Saifuz Zaman</h1>
-    <p>SQA | AI Project Specialist</p>
-    <div class="cta-buttons">
-        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="button" target="_blank">View My Upwork Profile</a>
-        <a href="#contact" class="button secondary">Get In Touch</a>
-    </div>
-</div>
-
+            <h1 class="animated-name">Saifuz Zaman</h1>
+            <p>SQA | AI Project Specialist</p>
+            <div class="cta-buttons">
+                <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="button" target="_blank" rel="noopener noreferrer">View My Upwork Profile</a>
+                <a href="#contact" class="button secondary">Get In Touch</a>
+            </div>
+        </div>
     </section>
 
     <!-- Upwork Banner -->
-    <div class="upwork-banner">
+    <aside class="upwork-banner">
         <div class="upwork-content">
             <h2>Top-Rated SQA Tester on Upwork</h2>
             <p>Delivering high-quality testing services with detailed bug reports and comprehensive documentation. Check out my Upwork portfolio for client projects and reviews.</p>
-            <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="upwork-button" target="_blank">
+            <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="upwork-button" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-external-link-alt"></i> View My Upwork Portfolio
             </a>
         </div>
-    </div>
+    </aside>
 
     <!-- Main Content -->
-    <div class="container">
+    <main class="container">
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <div class="about-grid">
+            <article class="about-grid">
                 <div class="profile-image-container">
-                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman" class="profile-image">
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true" alt="Saifuz Zaman - Professional SQA Tester" class="profile-image" loading="lazy">
                 </div>
                 <div class="about-content">
                     <h3>SQA Tester with 2+ Years of Experience</h3>
@@ -1268,43 +1465,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>My expertise spans across functional testing, API validation, and test automation, ensuring that applications perform flawlessly. I'm particularly passionate about AI projects and implementing quality assurance processes that drive excellence in software development.</p>
                     <p>As a top-rated SQA Tester on Upwork, I've helped numerous clients deliver high-quality software products by identifying and addressing issues before they reach end-users.</p>
                 </div>
-            </div>
+            </article>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
             <h2>My Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-check-square"></i>
+                <article class="skill-card">
+                    <i class="fas fa-check-square" aria-hidden="true"></i>
                     <h3>Manual Testing</h3>
                     <p>Expert in functional and GUI testing including Smoke testing, MAT, and Full AT. Detailed test case development and execution with comprehensive documentation.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-code" aria-hidden="true"></i>
                     <h3>API Testing</h3>
                     <p>Proficient in Postman for API validation, testing RESTful services, and ensuring proper data exchange between system components.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-robot"></i>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
                     <h3>Test Automation</h3>
                     <p>Experience with PyCharm and Selenium WebDriver for automating repetitive test cases, increasing efficiency and coverage.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-file-alt"></i>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
                     <h3>Test Documentation</h3>
                     <p>Creating detailed test plans, test cases, defect reports, and test summary reports to maintain clear communication across teams.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-bug"></i>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-bug" aria-hidden="true"></i>
                     <h3>Bug Tracking</h3>
                     <p>Thorough experience with bug tracking systems, creating detailed bug tickets with steps to reproduce, expected vs. actual results.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-brain"></i>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <h3>AI Projects</h3>
                     <p>Testing AI-driven applications and systems, ensuring proper functionality, reliability, and accuracy of machine learning implementations.</p>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -1312,35 +1509,35 @@ document.addEventListener('DOMContentLoaded', function() {
         <section id="experience">
             <h2>Work Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Top-Rated SQA Tester</h3>
-                        <div class="date">Aug 2024 - Present (1 Year+)</div>
-                        <p><a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="external-link" target="_blank">Upwork</a> SQA Tester, managing QA processes, and providing reports.</p>
+                        <time class="date" datetime="2024-08">Aug 2024 - Present (1 Year+)</time>
+                        <p><a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="external-link" target="_blank" rel="noopener noreferrer">Upwork</a> SQA Tester, managing QA processes, and providing reports.</p>
                         <ul>
                             <li>Achieved Top-Rated status on Upwork</li>
                             <li>Tested 33+ web and mobile applications</li>
                             <li>Specialized in AI project testing</li>
                         </ul>
                     </div>
-                </div>
-                <div class="timeline-item">
+                </article>
+                <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Software Test Engineer</h3>
-                        <div class="date"> OCT 2025 - Present </div>
-                        <p> <a href="https://sscl.tech" class="external-link" target="_blank">SSCL.TECH</a></p>
+                        <time class="date" datetime="2025-10">OCT 2025 - Present</time>
+                        <p><a href="https://sscl.tech" class="external-link" target="_blank" rel="noopener noreferrer">SSCL.TECH</a></p>
                         <ul>
                             <li>Planning, executing test plans/cases, creating test documentation, bug tickets, and test reports</li>
                             <li>Prioritized client communication, providing actionable insights on workflow</li>
                             <li>Worked well in teams, enhancing user experiences through innovative projects</li>
                         </ul>
                     </div>
-                </div>
-                <div class="timeline-item">
+                </article>
+                <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Junior QA Tester Trainee</h3>
-                        <div class="date">Dec 2023 - May 2024 (6 months)</div>
-                        <p>At <a href="https://a1qa.com" class="external-link" target="_blank">A1qa</a> Planned and executed tests, documented bugs, and delivered reports.</p>
+                        <time class="date" datetime="2023-12">Dec 2023 - May 2024 (6 months)</time>
+                        <p>At <a href="https://a1qa.com" class="external-link" target="_blank" rel="noopener noreferrer">A1qa</a> Planned and executed tests, documented bugs, and delivered reports.</p>
                         <ul>
                             <li>Creating comprehensive test documentation, crafting detailed bug tickets, and generating high-quality test reports</li>
                             <li>Planning, executing tests, and identifying system weaknesses for Mobile, Web, and Desktop applications.</li>
@@ -1349,11 +1546,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li>Skills: Charles Proxy, Quality reporting, and 17+ other skills</li>
                         </ul>
                     </div>
-                </div>
-                <div class="timeline-item">
+                </article>
+                <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Assistant IT Manager</h3>
-                        <div class="date">Nov 2023 - Apr 2024 (6 months)</div>
+                        <time class="date" datetime="2023-11">Nov 2023 - Apr 2024 (6 months)</time>
                         <p>At Education XYZ Bangladesh, I managed IT operations to support seamless virtual classes and online activities, providing technical support and training to staff and students.</p>
                         <ul>
                             <li>Secured sensitive data and maintained the agency's website for enhanced user engagement</li>
@@ -1361,225 +1558,48 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li>Optimized IT budgets, streamlined vendor communications, and automated routine tasks</li>
                         </ul>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
-<style>
-  .project-stats-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 40px 20px;
-    font-family: 'Montserrat', 'Arial', sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .stat-card {
-    background: white;
-    border-radius: 16px;
-    padding: 32px 28px;
-    width: 240px;
-    color: #1e3a8a; /* Darker blue for better readability */
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .stat-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #2ecc71, #27ae60);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-  }
-  
-  .stat-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  }
-  
-  .stat-card:hover::after {
-    transform: scaleX(1);
-  }
-  
-  .stat-card.mobile {
-    background: linear-gradient(165deg, #ffffff, #e8f5e9);
-  }
-  
-  .stat-card.web {
-    background: linear-gradient(165deg, #ffffff, #e3f2fd);
-  }
-  
-  .icon {
-    margin-bottom: 20px;
-    color: #2e7d32; /* Darker green for professional look */
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .icon svg {
-    width: 48px;
-    height: 48px;
-  }
-  
-  .count-wrapper {
-    font-size: 56px;
-    font-weight: 700;
-    margin: 20px 0;   
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    color: #1e3a8a;
-    letter-spacing: -1px;
-  }
-  
-  .count {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .plus {
-    font-size: 32px;
-    margin-left: 5px;
-    font-weight: 600;
-    opacity: 0.9;
-  }
-  
-  .label {
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-top: 15px;
-    color: #4a5568;
-    text-transform: uppercase;
-  }
-  
-  @media (max-width: 768px) {
-    .project-stats-container {
-      gap: 25px;
-    }
-    
-    .stat-card {
-      width: 100%;
-      max-width: 280px;
-      padding: 28px 20px;
-    }
-    
-    .count-wrapper {
-      font-size: 48px;
-    }
-  }
-</style>
 
-<div class="project-stats-container">
-  <div class="stat-card mobile">
-    <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-        <line x1="12" y1="18" x2="12" y2="18"></line>
-      </svg>
-    </div>
-    <div class="count-wrapper">
-      <span class="count" id="mobileCount">0</span>
-      <span class="plus">+</span>
-    </div>
-    <div class="label">Mobile Testing Projects</div>
-  </div>
-  
-  <div class="stat-card web">
-    <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-        <line x1="8" y1="21" x2="16" y2="21"></line>
-        <line x1="12" y1="17" x2="12" y2="21"></line>
-      </svg>
-    </div>
-    <div class="count-wrapper">
-      <span class="count" id="webCount">0</span>
-      <span class="plus">+</span>
-    </div>
-    <div class="label">Web Testing Projects</div>
-  </div>
-</div>
+        <!-- Project Stats -->
+        <div class="project-stats-container" role="region" aria-label="Project statistics">
+            <article class="stat-card mobile">
+                <div class="icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                </div>
+                <div class="count-wrapper">
+                    <span class="count" id="mobileCount" aria-label="33 plus mobile testing projects">0</span>
+                    <span class="plus" aria-hidden="true">+</span>
+                </div>
+                <div class="label">Mobile Testing Projects</div>
+            </article>
 
-<script>
-  // More professional easing function for smoother animation
-  function easeOutExpo(t) {
-    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-  }
-  
-  // Enhanced counter animation with easing
-  function animateCounter(elementId, targetValue, duration) {
-    const element = document.getElementById(elementId);
-    const startTime = performance.now();
-    
-    function updateCounter(currentTime) {
-      const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1);
-      const easedProgress = easeOutExpo(progress);
-      
-      const currentValue = Math.floor(easedProgress * targetValue);
-      element.textContent = currentValue;
-      
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      }
-    }
-    
-    requestAnimationFrame(updateCounter);
-  }
-  
-  // Initialize with counters at 0
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('mobileCount').textContent = '0';
-    document.getElementById('webCount').textContent = '0';
-    
-    // Use Intersection Observer to detect when stats are visible
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // Only trigger animation when element comes into view
-        if (entry.isIntersecting) {
-          // Delay the animation slightly to ensure user sees the beginning
-          setTimeout(() => {
-            animateCounter('mobileCount', 33, 2000);
-            animateCounter('webCount', 21, 2000);
-          }, 300);
-          
-          // Only trigger once
-          observer.disconnect();
-        }
-      });
-    }, { 
-      threshold: 0.3,  // Element must be 30% visible before triggering
-      rootMargin: '-10px' // Small negative margin to ensure user has scrolled enough
-    });
-    
-    // Start observing the stats container
-    const container = document.querySelector('.project-stats-container');
-    if (container) {
-      observer.observe(container);
-    }
-  });
-</script>
+            <article class="stat-card web">
+                <div class="icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="count-wrapper">
+                    <span class="count" id="webCount" aria-label="21 plus web testing projects">0</span>
+                    <span class="plus" aria-hidden="true">+</span>
+                </div>
+                <div class="label">Web Testing Projects</div>
+            </article>
+        </div>
 
         <!-- Projects Section -->
         <section id="projects">
             <h2>Recent Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
+                <article class="project-card">
+                    <div class="project-img" aria-hidden="true">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <div class="project-content">
@@ -1590,11 +1610,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="tag">Functional Testing</span>
                             <span class="tag">UI/UX</span>
                         </div>
-                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank">View on Upwork</a>
+                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank" rel="noopener noreferrer">View on Upwork</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
+                </article>
+                <article class="project-card">
+                    <div class="project-img" aria-hidden="true">
                         <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
@@ -1605,11 +1625,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="tag">NLP</span>
                             <span class="tag">User Scenarios</span>
                         </div>
-                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank">View on Upwork</a>
+                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank" rel="noopener noreferrer">View on Upwork</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
+                </article>
+                <article class="project-card">
+                    <div class="project-img" aria-hidden="true">
                         <i class="fas fa-code"></i>
                     </div>
                     <div class="project-content">
@@ -1620,649 +1640,277 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="tag">Postman</span>
                             <span class="tag">Security Testing</span>
                         </div>
-                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank">View on Upwork</a>
+                        <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6?p=1856243902159216640" class="button" target="_blank" rel="noopener noreferrer">View on Upwork</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-      <!-- Certifications Section -->
-<section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certifications-grid">
-        <div class="certification-card">
-            <div>
-                <h3>QA Functional Testing Training</h3>
-                <p>Comprehensive training in functional testing methodologies, test case design, and quality assurance processes.</p>
-                <p class="certification-provider">Provider: A1QA</p>
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <article class="certification-card">
+                    <div>
+                        <h3>QA Functional Testing Training</h3>
+                        <p>Comprehensive training in functional testing methodologies, test case design, and quality assurance processes.</p>
+                        <p class="certification-provider">Provider: A1QA</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1Ghvqu0cfyqctQdouBw2jwB2eq5WYQh-H/view?usp=drive_link" class="button" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </article>
+                <article class="certification-card">
+                    <div>
+                        <h3>Information Security Awareness</h3>
+                        <p>Training in information security principles, data protection practices, and security testing methodologies.</p>
+                        <p class="certification-provider">Provider: Fortinet</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/15j60I3Ip2r7xc5wUUE4fPYfC7qSdDZU9/view?usp=drive_link" class="button" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </article>
+                <article class="certification-card">
+                    <div>
+                        <h3>Software Testing Fundamentals</h3>
+                        <p>Course covering essential software testing concepts, testing types, and best practices in quality assurance.</p>
+                        <p class="certification-provider">Provider: LinkedIn Learning</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/18N4hTYAC8ehNV_N4VhTj9BYacrtqpQYN/view?usp==drive_link" class="button" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </article>
             </div>
-            <a href="https://drive.google.com/file/d/1Ghvqu0cfyqctQdouBw2jwB2eq5WYQh-H/view?usp=drive_link" class="button" target="_blank">View Certificate</a>
-        </div>
-        <div class="certification-card">
-            <div>
-                <h3>Information Security Awareness</h3>
-                <p>Training in information security principles, data protection practices, and security testing methodologies.</p>
-                <p class="certification-provider">Provider: Fortinet</p>
-            </div>
-            <a href="https://drive.google.com/file/d/15j60I3Ip2r7xc5wUUE4fPYfC7qSdDZU9/view?usp=drive_link" class="button" target="_blank">View Certificate</a>
-        </div>
-        <div class="certification-card">
-            <div>
-                <h3>Software Testing Fundamentals</h3>
-                <p>Course covering essential software testing concepts, testing types, and best practices in quality assurance.</p>
-                <p class="certification-provider">Provider: LinkedIn Learning</p>
-            </div>
-            <a href="https://drive.google.com/file/d/18N4hTYAC8ehNV_N4VhTj9BYacrtqpQYN/view?usp==drive_link" class="button" target="_blank">View Certificate</a>
-        </div>
-    </div>
-</section>
-<!-- Client Feedback Section --> 
-<section id="client-feedback">
-    <h2>What My Clients Say</h2>
-    <div class="feedback-container">
-        <div class="feedback-card">
-            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163925.png?raw=true" alt="Client Feedback 1">
-        </div>
-        <div class="feedback-card">
-            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163943.png?raw=true" alt="Client Feedback 2">
-        </div>
-        <div class="feedback-card">
-            <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20164004.png?raw=true" alt="Client Feedback 3">
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- Contact Section --> 
-<section id="contact">
-    <h2>Get In Touch</h2>
-    <div class="contact-container">
-        <div class="contact-card">
-            <h3>Contact Information</h3>
-            <div class="contact-detail">
-                <i class="fas fa-envelope"></i>
-                <p><a href="mailto:contact.szaman@gmail.com">contact.szaman@gmail.com</a></p>
+        <!-- Client Feedback Section -->
+        <section id="client-feedback">
+            <h2>What My Clients Say</h2>
+            <div class="feedback-container">
+                <article class="feedback-card">
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163925.png?raw=true" alt="Client testimonial feedback 1" loading="lazy">
+                </article>
+                <article class="feedback-card">
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20163943.png?raw=true" alt="Client testimonial feedback 2" loading="lazy">
+                </article>
+                <article class="feedback-card">
+                    <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-03-04%20164004.png?raw=true" alt="Client testimonial feedback 3" loading="lazy">
+                </article>
             </div>
-            <div class="contact-detail">
-                <i class="fas fa-map-marker-alt"></i>
-                <p><a href="https://www.google.com/maps/place/Feni/@23.0122325,91.3782879,14z/data=!3m1!4b1!4m6!3m5!1s0x3753429e88a352f7:0xdf9547cb76f03b88!8m2!3d23.0128119!4d91.3965095!16s%2Fm%2F05mzxlf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D">Feni, Bangladesh</a></p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <article class="contact-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <p><a href="mailto:contact.szaman@gmail.com">contact.szaman@gmail.com</a></p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <p><a href="https://www.google.com/maps/place/Feni/@23.0122325,91.3782879,14z/data=!3m1!4b1!4m6!3m5!1s0x3753429e88a352f7:0xdf9547cb76f03b88!8m2!3d23.0128119!4d91.3965095!16s%2Fm%2F05mzxlf?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Feni, Bangladesh</a></p>
+                    </div>
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/saifuzzaman-chayan/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn profile">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/szamanhmm" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
-            <h3>Follow Me</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/saifuzzaman-chayan/" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/szamanhmm" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; 2025 Saifuz Zaman. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            
+            // Check for saved theme preference
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+            
+            // Toggle dark mode
+            darkModeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
                 
-            </div>
-        </div>
-    </div>
-</section>
-<script>
-let inactivityTimer;
-let autoScrollInterval;
-let userScrollingUp = false;
+                // Save preference
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
 
-function startAutoScroll() {
-    // Don't start auto-scroll if user is scrolling up
-    if (userScrollingUp) return;
-    
-    // Clear any existing interval
-    clearInterval(autoScrollInterval);
-    
-    // Start continuous scrolling
-    autoScrollInterval = setInterval(() => {
-        // Get the contact section position
-        const contactSection = document.getElementById('contact');
-        const contactPosition = contactSection.getBoundingClientRect().top + window.scrollY;
-        
-        // Check if we've reached the contact section or bottom of page
-        if (window.scrollY >= contactPosition - 100 || 
-            window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            // Stop scrolling if at the contact section or bottom of the page
-            clearInterval(autoScrollInterval);
-        } else {
-            // Scroll down by 50px every 200ms
-            window.scrollBy({ top: 50, behavior: 'smooth' });
+        // Animated Name
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameElement = document.querySelector('.animated-name');
+            if (nameElement) {
+                const text = nameElement.textContent;
+                nameElement.innerHTML = '';
+                
+                // Create spans for each character, preserving spaces
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    // If it's a space, use a non-breaking space
+                    if (text[i] === ' ') {
+                        span.innerHTML = '&nbsp;';
+                    } else {
+                        span.textContent = text[i];
+                    }
+                    span.style.setProperty('--char-index', i);
+                    nameElement.appendChild(span);
+                }
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const links = document.querySelectorAll('.nav-links a');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Counter Animation
+        function easeOutExpo(t) {
+            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
         }
-    }, 200);
-}
 
-function resetTimer() {
-    // Clear inactivity timer and auto-scroll interval
-    clearTimeout(inactivityTimer);
-    clearInterval(autoScrollInterval);
+        function animateCounter(elementId, targetValue, duration) {
+            const element = document.getElementById(elementId);
+            const startTime = performance.now();
+            
+            function updateCounter(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const easedProgress = easeOutExpo(progress);
+                
+                const currentValue = Math.floor(easedProgress * targetValue);
+                element.textContent = currentValue;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
 
-    // Only set a new timer if not scrolling up
-    if (!userScrollingUp) {
-        inactivityTimer = setTimeout(startAutoScroll, 5000);
-    }
-}
+        // Initialize counters with Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('mobileCount').textContent = '0';
+            document.getElementById('webCount').textContent = '0';
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            animateCounter('mobileCount', 33, 2000);
+                            animateCounter('webCount', 21, 2000);
+                        }, 300);
+                        
+                        observer.disconnect();
+                    }
+                });
+            }, { 
+                threshold: 0.3,
+                rootMargin: '-10px'
+            });
+            
+            const container = document.querySelector('.project-stats-container');
+            if (container) {
+                observer.observe(container);
+            }
+        });
 
-// Detect when user is scrolling up
-document.addEventListener('wheel', function(e) {
-    if (e.deltaY < 0) {
-        // User is scrolling up
-        userScrollingUp = true;
-        clearInterval(autoScrollInterval);
-        clearTimeout(inactivityTimer);
-        
-        // Reset the flag after a delay
-        clearTimeout(window.scrollUpTimeout);
-        window.scrollUpTimeout = setTimeout(() => {
-            userScrollingUp = false;
-        }, 3000);
-    }
-});
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
 
-// Reset timer on user interaction
-document.addEventListener('mousemove', resetTimer);
-document.addEventListener('keydown', resetTimer);
-document.addEventListener('touchstart', resetTimer);
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
 
-// Start timer initially
-resetTimer();
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
+        // Auto-scroll functionality
+        let inactivityTimer;
+        let autoScrollInterval;
+        let userScrollingUp = false;
 
+        function startAutoScroll() {
+            if (userScrollingUp) return;
+            
+            clearInterval(autoScrollInterval);
+            
+            autoScrollInterval = setInterval(() => {
+                const contactSection = document.getElementById('contact');
+                const contactPosition = contactSection.getBoundingClientRect().top + window.scrollY;
+                
+                if (window.scrollY >= contactPosition - 100 || 
+                    window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    clearInterval(autoScrollInterval);
+                } else {
+                    window.scrollBy({ top: 50, behavior: 'smooth' });
+                }
+            }, 200);
+        }
+
+        function resetTimer() {
+            clearTimeout(inactivityTimer);
+            clearInterval(autoScrollInterval);
+
+            if (!userScrollingUp) {
+                inactivityTimer = setTimeout(startAutoScroll, 5000);
+            }
+        }
+
+        document.addEventListener('wheel', function(e) {
+            if (e.deltaY < 0) {
+                userScrollingUp = true;
+                clearInterval(autoScrollInterval);
+                clearTimeout(inactivityTimer);
+                
+                clearTimeout(window.scrollUpTimeout);
+                window.scrollUpTimeout = setTimeout(() => {
+                    userScrollingUp = false;
+                }, 3000);
+            }
+        });
+
+        document.addEventListener('mousemove', resetTimer);
+        document.addEventListener('keydown', resetTimer);
+        document.addEventListener('touchstart', resetTimer);
+
+        resetTimer();
     </script>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2025 Saifuz Zaman. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<!-- CSS -->
-<style>
-    :root {
-    --primary: #0073b1;
-    --primary-dark: #005582;
-    --secondary: #34495e;
-    --light: #f9f9fa;
-    --dark: #333;
-    --text: #555;
-    --border-radius: 8px;
-    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --accent: #ff9800;
-    --card-bg: #ffffff;
-}
-
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light);
-    color: var(--text);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-x: hidden;
-    width: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Mobile Navigation Toggle */
-.mobile-nav-toggle {
-    display: none;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 5px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.mobile-nav-toggle:hover {
-    background-color: var(--primary-dark);
-    transform: scale(1.05);
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin-left: 15px;
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.sun-icon, .moon-icon {
-    position: absolute;
-    transition: transform 0.5s ease;
-}
-
-.sun-icon {
-    color: #ff9800;
-    transform: translateY(0);
-}
-
-.moon-icon {
-    color: #0073b1;
-    transform: translateY(40px);
-}
-/* Timeline content (Experience section) */
-.timeline-content {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease, background-color 0.3s ease;
-    position: relative;
-}
-
-.timeline-content h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.timeline-content p, .timeline-content li {
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-.animated-name {
-    font-size: 4.5rem;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.animated-name::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-left: 3px solid var(--accent);
-    background-color: rgba(0,0,0,0.7);
-    left: 0;
-    top: 0;
-    animation: typing 3s steps(30) forwards;
-}
-
-@keyframes typing {
-    to {
-        left: 100%;
-        width: 0;
-    }
-}
-
-.animated-name span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.3s forwards;
-    animation-delay: calc(var(--char-index) * 0.1s);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.animated-name span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.3s forwards, colorCycle 4s infinite alternate;
-    animation-delay: calc(var(--char-index) * 0.1s), calc(var(--char-index) * 0.1s + 3s);
-}
-
-@keyframes colorCycle {
-    0% { color: white; }
-    25% { color: #f8f9fa; }
-    50% { color: #e6f7ff; }
-    75% { color: #f8f9fa; }
-    100% { color: white; }
-}
-
-/* Project cards */
-.project-card {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition), background-color 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-content h3 {
-    color: var(--dark);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.project-content p {
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-/* Certification cards */
-.certification-card {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition), background-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    border-left: 4px solid var(--primary);
-}
-
-.certification-card h3 {
-    color: var(--dark);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.certification-card p {
-    color: var(--text);
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
-
-/* Client Feedback Section */
-#client-feedback {
-    padding: 50px 20px;
-    background-color: var(--light);
-    margin-bottom: 0;
-    transition: background-color 0.3s ease;
-}
-
-#client-feedback h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--dark);
-    margin-bottom: 30px;
-    transition: color 0.3s ease;
-}
-
-.feedback-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.feedback-card {
-    background: var(--card-bg);
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    width: 300px;
-    max-width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.feedback-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.feedback-card img {
-    width: 100%;
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Contact Section */
-#contact {
-    padding: 50px 20px;
-    margin: 0;
-    background-color: var(--light);
-    transition: background-color 0.3s ease;
-}
-
-#contact h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--dark);
-    margin-bottom: 20px;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-#contact h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--primary);
-    margin: 10px auto 0;
-    border-radius: 2px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.contact-card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-card h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary);
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-}
-
-.contact-detail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1rem;
-    margin: 10px 0;
-    color: var(--dark);
-    transition: color 0.3s ease;
-}
-
-.contact-detail i {
-    font-size: 1.3rem;
-    color: var(--primary);
-    transition: color 0.3s ease;
-}
-
-.contact-detail a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.contact-detail a:hover {
-    color: var(--primary-dark);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.footer-content {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    --light: #1a1a1a;
-    --dark: #f5f5f5;
-    --text: #e0e0e0;
-    --card-bg: #2d2d2d;
-    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode header {
-    background-color: var(--card-bg);
-}
-
-body.dark-mode .nav-links a {
-    color: var(--dark);
-}
-
-body.dark-mode .logo {
-    color: var(--primary);
-}
-
-body.dark-mode .dark-mode-toggle .sun-icon {
-    transform: translateY(40px);
-}
-
-body.dark-mode .dark-mode-toggle .moon-icon {
-    transform: translateY(0);
-}
-
-body.dark-mode .nav-links {
-    background-color: var(--card-bg);
-}
-
-body.dark-mode .mobile-nav-toggle {
-    background-color: var(--primary);
-    color: white;
-}
-
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .feedback-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .contact-card {
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .testimonial-slide {
-        flex: 0 0 calc(100% - 20px);
-    }
-}
-
-/* Container alignment fix */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Grid alignment fixes */
-.skills-grid, 
-.projects-grid, 
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    width: 100%;
-    justify-content: center;
-}
-
-/* For smaller screens */
-@media screen and (max-width: 992px) {
-    .skills-grid, 
-    .projects-grid, 
-    .certifications-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .skills-grid, 
-    .projects-grid, 
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
-</style>
+</body>
+</html>

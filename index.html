@@ -15,7 +15,7 @@
     <meta property="og:title" content="Saifuz Zaman - Top-Rated SQA Tester | Software Quality Assurance Expert">
     <meta property="og:description" content="Top-rated SQA Tester specializing in manual testing, API validation, and AI project testing. 33+ tested applications with comprehensive testing services.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:url" content="https://szamanqa.me">
     <meta property="og:image" content="https://github.com/szamanhmm/szamanqa.github.io/blob/main/AVATAR.jpg?raw=true">
     
     <!-- Twitter Card Meta Tags -->
@@ -794,6 +794,81 @@
             text-transform: uppercase;
         }
 
+        /* Clients and Projects Section */
+        #clients-projects {
+            background-color: var(--light);
+            padding: 60px 20px;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+
+        #clients-projects h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .clients-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .clients-scroll-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .clients-scroll-wrapper {
+            display: flex;
+            animation: scroll 45s linear infinite;
+            width: fit-content;
+        }
+
+        .clients-scroll-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .client-logo {
+            flex-shrink: 0;
+            width: 200px;
+            height: 120px;
+            margin: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%) brightness(0.8) contrast(1.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%) brightness(1) contrast(1);
+            transform: scale(1.15);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -1360,6 +1435,12 @@
             .count-wrapper {
                 font-size: 48px;
             }
+
+            .client-logo {
+                width: 150px;
+                height: 90px;
+                margin: 0 20px;
+            }
         }
 
         @media screen and (max-width: 576px) {
@@ -1384,6 +1465,12 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .client-logo {
+                width: 120px;
+                height: 70px;
+                margin: 0 15px;
+            }
         }
     </style>
 </head>
@@ -1400,6 +1487,7 @@
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#experience">Experience</a>
+                <a href="#clients-projects">Clients</a>
                 <a href="#projects">Projects</a>
                 <a href="#client-feedback">Client Testimonials</a>
                 <a href="#certifications">Certifications</a>
@@ -1593,6 +1681,151 @@
                 <div class="label">Web Testing Projects</div>
             </article>
         </div>
+
+        <!-- Clients and Projects Section -->
+        <section id="clients-projects">
+            <h2>Clients & Projects</h2>
+            <p class="clients-subtitle">Proud to Work With:</p>
+            <div class="clients-scroll-container">
+                <div class="clients-scroll-wrapper">
+                    <!-- First set of logos -->
+                    <a href="https://greensteptrading.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Green Step Trading">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Green%20step%20trading%20logo.png?raw=true" alt="Green Step Trading">
+                    </a>
+                    <a href="https://waada.care" target="_blank" rel="noopener noreferrer" class="client-logo" title="Waada Care Limited">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/=waada%20logo.png?raw=true" alt="Waada Care Limited">
+                    </a>
+                    <a href="https://www.pawfectnotes.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Pawfect Notes">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/pawfect%20notes%20logo.png?raw=true" alt="Pawfect Notes">
+                    </a>
+                    <a href="https://bling-iq.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Bling (MidyaTech IT)">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Bling%20Logo.png?raw=true" alt="Bling">
+                    </a>
+                    <a href="https://vbckyapps.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="VBAPPS">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/WhatsApp%20Image%202025-10-23%20at%2010.56.29_40f58199.jpg?raw=true" alt="VBAPPS">
+                    </a>
+                    <a href="https://bbk.me" target="_blank" rel="noopener noreferrer" class="client-logo" title="Blackbook (BBK)">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20151432.png?raw=true" alt="Blackbook BBK">
+                    </a>
+                    <a href="https://topacademy.elevatex.site/checkout?productId=prod_SUVnxoUje6nOyC&mode=subscription" target="_blank" rel="noopener noreferrer" class="client-logo" title="Dr.fit (Topacademy Elevatex)">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/WhatsApp%20Image%202025-10-23%20at%2010.54.13_8eb8b3c4.jpg?raw=true" alt="Dr.fit">
+                    </a>
+                    <a href="https://getoutlast.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Outlast">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/LOGO.png?raw=true" alt="Outlast">
+                    </a>
+                    <a href="https://closetfestive.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Closetfestive">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/closetfestive.jpg?raw=true" alt="Closetfestive">
+                    </a>
+                    <a href="https://www.wizkid.app/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Junfrau Labs">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20152213.png?raw=true" alt="Junfrau Labs">
+                    </a>
+                    <a href="https://www.payfran.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Payfran">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20152500.png?raw=true" alt="Payfran">
+                    </a>
+                    <a href="https://advisemycampus.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Advise">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20170633.png?raw=true" alt="Advise">
+                    </a>
+                    <a href="https://focusreintel.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Locus California">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153258.png?raw=true" alt="Locus California">
+                    </a>
+                    <a href="https://thriveher.passion.io" target="_blank" rel="noopener noreferrer" class="client-logo" title="Thriveher">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153546.png?raw=true" alt="Thriveher">
+                    </a>
+                    <a href="https://buyoneautogroup.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="BuyOneAuto">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20154020.png?raw=true" alt="BuyOneAuto">
+                    </a>
+                    <a href="https://amori.life/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Amori">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20155754.png?raw=true" alt="Amori">
+                    </a>
+                    <a href="http://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20161030.png?raw=true" alt="Robowork">
+                    </a>
+                    <a href="https://subfeed.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Subfeed">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20161650.png?raw=true" alt="Subfeed">
+                    </a>
+                    <a href="https://topperformerconstruction.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Top Performer Construction">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20163251.png?raw=true" alt="Top Performer Construction">
+                    </a>
+                    <a href="https://finbotica.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Finbotica">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20163414.png?raw=true" alt="Finbotica">
+                    </a>
+                    <a href="https://mumslaundry.ph/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Mums Laundry">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Mums-Laundry-Logo.png?raw=true" alt="Mums Laundry">
+                    </a>
+                    <a href="https://apisaero.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="ApisAero">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153715.png?raw=true" alt="ApisAero">
+                    </a>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <a href="https://greensteptrading.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Green Step Trading">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Green%20step%20trading%20logo.png?raw=true" alt="Green Step Trading">
+                    </a>
+                    <a href="https://waada.care" target="_blank" rel="noopener noreferrer" class="client-logo" title="Waada Care Limited">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/=waada%20logo.png?raw=true" alt="Waada Care Limited">
+                    </a>
+                    <a href="https://www.pawfectnotes.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Pawfect Notes">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/pawfect%20notes%20logo.png?raw=true" alt="Pawfect Notes">
+                    </a>
+                    <a href="https://bling-iq.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Bling (MidyaTech IT)">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Bling%20Logo.png?raw=true" alt="Bling">
+                    </a>
+                    <a href="https://vbckyapps.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="VBAPPS">
+                        <img src="https://via.placeholder.com/200x100/0073b1/ffffff?text=VBAPPS" alt="VBAPPS">
+                    </a>
+                    <a href="https://bbk.me" target="_blank" rel="noopener noreferrer" class="client-logo" title="Blackbook (BBK)">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20151432.png?raw=true" alt="Blackbook BBK">
+                    </a>
+                    <a href="https://topacademy.elevatex.site/checkout?productId=prod_SUVnxoUje6nOyC&mode=subscription" target="_blank" rel="noopener noreferrer" class="client-logo" title="Dr.fit (Topacademy Elevatex)">
+                        <img src="https://via.placeholder.com/200x100/ff9800/ffffff?text=Dr.fit" alt="Dr.fit">
+                    </a>
+                    <a href="https://getoutlast.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Outlast">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/LOGO.png?raw=true" alt="Outlast">
+                    </a>
+                    <a href="https://closetfestive.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Closetfestive">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/closetfestive.jpg?raw=true" alt="Closetfestive">
+                    </a>
+                    <a href="https://www.wizkid.app/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Junfrau Labs">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20152213.png?raw=true" alt="Junfrau Labs">
+                    </a>
+                    <a href="https://www.payfran.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Payfran">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20152500.png?raw=true" alt="Payfran">
+                    </a>
+                    <a href="https://advisemycampus.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Advise">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20170633.png?raw=true" alt="Advise">
+                    </a>
+                    <a href="https://focusreintel.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Locus California">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153258.png?raw=true" alt="Locus California">
+                    </a>
+                    <a href="https://thriveher.passion.io" target="_blank" rel="noopener noreferrer" class="client-logo" title="Thriveher">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153546.png?raw=true" alt="Thriveher">
+                    </a>
+                    <a href="https://buyoneautogroup.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="BuyOneAuto">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20154020.png?raw=true" alt="BuyOneAuto">
+                    </a>
+                    <a href="https://amori.life/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Amori">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20155754.png?raw=true" alt="Amori">
+                    </a>
+                    <a href="http://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20161030.png?raw=true" alt="Robowork">
+                    </a>
+                    <a href="https://subfeed.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Subfeed">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20161650.png?raw=true" alt="Subfeed">
+                    </a>
+                    <a href="https://topperformerconstruction.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Top Performer Construction">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20163251.png?raw=true" alt="Top Performer Construction">
+                    </a>
+                    <a href="https://finbotica.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Finbotica">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20163414.png?raw=true" alt="Finbotica">
+                    </a>
+                    <a href="https://mumslaundry.ph/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Mums Laundry">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Mums-Laundry-Logo.png?raw=true" alt="Mums Laundry">
+                    </a>
+                    <a href="https://apisaero.com/" target="_blank" rel="noopener noreferrer" class="client-logo" title="ApisAero">
+                        <img src="https://github.com/szamanhmm/szamanqa.github.io/blob/main/Screenshot%202025-10-19%20153715.png?raw=true" alt="ApisAero">
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Projects Section -->
         <section id="projects">

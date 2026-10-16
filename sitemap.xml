@@ -100,12 +100,4 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Digital Creator Page -->
-  <url>
-    <loc>https://szamanqa.me/digitalcreator.html</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>

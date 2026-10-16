@@ -28,12 +28,11 @@
     <link rel="canonical" href="https://szamanqa.me/experience.html">
     <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/32/1055/1055687.png">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="ai-chat.css">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -100,7 +99,23 @@
     <main class="container">
         <!-- Experience Section -->
         <section id="experience" style="padding: 20px 0;">
-            <div class="timeline">
+            <div class="experience-header-container">
+                <h2>Career Timeline</h2>
+                <div class="experience-controls">
+                    <button class="exp-nav-btn prev" id="expPrevBtn" aria-label="Previous experience"><i class="fas fa-chevron-left"></i></button>
+                    <div class="experience-view-toggle">
+                        <button class="exp-view-btn active" data-view="horizontal" title="Horizontal Timeline Track">
+                            <i class="fas fa-arrows-alt-h"></i> Timeline
+                        </button>
+                        <button class="exp-view-btn" data-view="landscape-grid" title="Wide Landscape Cards">
+                            <i class="fas fa-th-large"></i> Cards
+                        </button>
+                    </div>
+                    <button class="exp-nav-btn next" id="expNextBtn" aria-label="Next experience"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline horizontal-timeline" id="experienceTimeline">
                 <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Top-Rated Upwork Talent | CEO <a href="https://c4utech.com" class="external-link" target="_blank" rel="noopener noreferrer">C4U Tech</a></h3>
@@ -142,7 +157,6 @@
                             <li>Planning, executing tests, and identifying system weaknesses for Mobile, Web, and Desktop applications</li>
                             <li>Prioritized clear communication, providing actionable insights for improvement</li>
                             <li>Worked well in teams, enhancing user experiences through innovative projects</li>
-                            <li>Skills: Charles Proxy, Quality reporting, and 17+ other skills</li>
                         </ul>
                     </div>
                 </article>
@@ -160,6 +174,7 @@
                     </div>
                 </article>
             </div>
+        </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="button" target="_blank" rel="noopener noreferrer">View Upwork Profile</a>
                 <a href="contact.html" class="button secondary" style="margin-left: 15px;">Get In Touch</a>
@@ -194,8 +209,43 @@
                     navLinks.classList.toggle('active');
                 });
             }
+
+            // Experience Landscape Controls
+            const expTimeline = document.getElementById('experienceTimeline');
+            const expPrevBtn = document.getElementById('expPrevBtn');
+            const expNextBtn = document.getElementById('expNextBtn');
+            const expViewBtns = document.querySelectorAll('.exp-view-btn');
+
+            if (expPrevBtn && expNextBtn && expTimeline) {
+                expPrevBtn.addEventListener('click', () => {
+                    expTimeline.scrollBy({ left: -360, behavior: 'smooth' });
+                });
+                expNextBtn.addEventListener('click', () => {
+                    expTimeline.scrollBy({ left: 360, behavior: 'smooth' });
+                });
+            }
+
+            if (expViewBtns.length && expTimeline) {
+                expViewBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        expViewBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const view = btn.getAttribute('data-view');
+                        if (view === 'landscape-grid') {
+                            expTimeline.classList.remove('horizontal-timeline');
+                            expTimeline.classList.add('landscape-grid');
+                            if (expPrevBtn) expPrevBtn.style.display = 'none';
+                            if (expNextBtn) expNextBtn.style.display = 'none';
+                        } else {
+                            expTimeline.classList.remove('landscape-grid');
+                            expTimeline.classList.add('horizontal-timeline');
+                            if (expPrevBtn) expPrevBtn.style.display = 'flex';
+                            if (expNextBtn) expNextBtn.style.display = 'flex';
+                        }
+                    });
+                });
+            }
         });
     </script>
-    <script src="ai-chat.js" defer></script>
 </body>
 </html>

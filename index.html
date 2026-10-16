@@ -52,8 +52,7 @@
     <!-- External Resources -->
         <link rel="preload" as="image" href="AVATAR.webp" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="ai-chat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -265,13 +264,28 @@
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="timeline">
+            <div class="experience-header-container">
+                <h2>Work Experience</h2>
+                <div class="experience-controls">
+                    <button class="exp-nav-btn prev" id="expPrevBtn" aria-label="Previous experience"><i class="fas fa-chevron-left"></i></button>
+                    <div class="experience-view-toggle">
+                        <button class="exp-view-btn active" data-view="horizontal" title="Horizontal Timeline Track">
+                            <i class="fas fa-arrows-alt-h"></i> Timeline
+                        </button>
+                        <button class="exp-view-btn" data-view="landscape-grid" title="Wide Landscape Cards">
+                            <i class="fas fa-th-large"></i> Cards
+                        </button>
+                    </div>
+                    <button class="exp-nav-btn next" id="expNextBtn" aria-label="Next experience"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline horizontal-timeline" id="experienceTimeline">
                 <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Top-Rated Upwork Talent | CEO <a href="https://c4utech.com" class="external-link" target="_blank" rel="noopener noreferrer">C4U Tech</a></h3>
                         <span class="role-badge full-time">Full-Time</span>
-                        <time class="date" datetime="2024-01">DEC 2023 - Sep 2025 (1.5 Years+)</time>
+                        <time class="date" datetime="2023-12">DEC 2023 - Present (1.5+ Years)</time>
                         <p><a href="https://www.upwork.com/freelancers/~017c08c6bfe9705ad6" class="external-link" target="_blank" rel="noopener noreferrer">Upwork</a> SQA Engineer, managing Team, QA processes, and providing Reports.</p>
                         <ul>
                             <li>Achieved Top-Rated status on Upwork</li>
@@ -308,7 +322,6 @@
                             <li>Planning, executing tests, and identifying system weaknesses for Mobile, Web, and Desktop applications.</li>
                             <li>Prioritized clear communication, providing actionable insights for improvement</li>
                             <li>Worked well in teams, enhancing user experiences through innovative projects</li>
-                            <li>Skills: Charles Proxy, Quality reporting, and 17+ other skills</li>
                         </ul>
                     </div>
                 </article>
@@ -325,6 +338,7 @@
                         </ul>
                     </div>
                 </article>
+            </div>
             </div>
         </section>
 
@@ -353,10 +367,45 @@
                     </svg>
                 </div>
                 <div class="count-wrapper">
-                    <span class="count" id="webCount" aria-label="21+ plus web projects">0</span>
+                    <span class="count" id="webCount" aria-label="38+ web projects">0</span>
                     <span class="plus" aria-hidden="true">+</span>
                 </div>
                 <div class="label">Web Testing Projects</div>
+            </article>
+
+            <article class="stat-card saas">
+                <div class="icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                    </svg>
+                </div>
+                <div class="count-wrapper">
+                    <span class="count" id="saasCount" aria-label="28+ SaaS platforms">0</span>
+                    <span class="plus" aria-hidden="true">+</span>
+                </div>
+                <div class="label">SaaS &amp; Cloud Platforms</div>
+            </article>
+
+            <article class="stat-card ai">
+                <div class="icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                        <rect x="9" y="9" width="6" height="6"></rect>
+                        <line x1="9" y1="1" x2="9" y2="4"></line>
+                        <line x1="15" y1="1" x2="15" y2="4"></line>
+                        <line x1="9" y1="20" x2="9" y2="23"></line>
+                        <line x1="15" y1="20" x2="15" y2="23"></line>
+                        <line x1="20" y1="9" x2="23" y2="9"></line>
+                        <line x1="20" y1="14" x2="23" y2="14"></line>
+                        <line x1="1" y1="9" x2="4" y2="9"></line>
+                        <line x1="1" y1="14" x2="4" y2="14"></line>
+                    </svg>
+                </div>
+                <div class="count-wrapper">
+                    <span class="count" id="aiCount" aria-label="22+ AI & automation projects">0</span>
+                    <span class="plus" aria-hidden="true">+</span>
+                </div>
+                <div class="label">AI &amp; Automation Systems</div>
             </article>
         </div>
 
@@ -415,7 +464,7 @@
                     <a href="https://amori.life/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Amori">
                         <img src="Screenshot 2025-10-19 155754.webp" alt="Amori" width="160" height="70" loading="lazy" decoding="async">
                     </a>
-                    <a href="http://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
+                    <a href="https://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
                         <img src="Screenshot 2025-10-19 161030.webp" alt="Robowork" width="160" height="70" loading="lazy" decoding="async">
                     </a>
                     <a href="https://subfeed.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Subfeed">
@@ -483,7 +532,7 @@
                     <a href="https://amori.life/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Amori">
                         <img src="Screenshot 2025-10-19 155754.webp" alt="Amori" width="160" height="70" loading="lazy" decoding="async">
                     </a>
-                    <a href="http://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
+                    <a href="https://robowork.io/" target="_blank" rel="noopener noreferrer" class="client-logo" title="Robowork">
                         <img src="Screenshot 2025-10-19 161030.webp" alt="Robowork" width="160" height="70" loading="lazy" decoding="async">
                     </a>
                     <a href="https://subfeed.com" target="_blank" rel="noopener noreferrer" class="client-logo" title="Subfeed">
@@ -731,15 +780,23 @@
 
         // Initialize counters with Intersection Observer
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('mobileCount').textContent = '0';
-            document.getElementById('webCount').textContent = '0';
+            const counters = [
+                { id: 'mobileCount', target: 83 },
+                { id: 'webCount', target: 38 },
+                { id: 'saasCount', target: 28 },
+                { id: 'aiCount', target: 22 }
+            ];
+
+            counters.forEach(c => {
+                const el = document.getElementById(c.id);
+                if (el) el.textContent = '0';
+            });
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         setTimeout(() => {
-                            animateCounter('mobileCount', 83, 2000);
-                            animateCounter('webCount', 38, 2000);
+                            counters.forEach(c => animateCounter(c.id, c.target, 2000));
                         }, 300);
                         
                         observer.disconnect();
@@ -775,9 +832,41 @@
             });
         });
 
-        // Auto-scroll disabled for performance and smooth UX
+        // Experience Landscape Controls
+        const expTimeline = document.getElementById('experienceTimeline');
+        const expPrevBtn = document.getElementById('expPrevBtn');
+        const expNextBtn = document.getElementById('expNextBtn');
+        const expViewBtns = document.querySelectorAll('.exp-view-btn');
+
+        if (expPrevBtn && expNextBtn && expTimeline) {
+            expPrevBtn.addEventListener('click', () => {
+                expTimeline.scrollBy({ left: -360, behavior: 'smooth' });
+            });
+            expNextBtn.addEventListener('click', () => {
+                expTimeline.scrollBy({ left: 360, behavior: 'smooth' });
+            });
+        }
+
+        if (expViewBtns.length && expTimeline) {
+            expViewBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    expViewBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const view = btn.getAttribute('data-view');
+                    if (view === 'landscape-grid') {
+                        expTimeline.classList.remove('horizontal-timeline');
+                        expTimeline.classList.add('landscape-grid');
+                        if (expPrevBtn) expPrevBtn.style.display = 'none';
+                        if (expNextBtn) expNextBtn.style.display = 'none';
+                    } else {
+                        expTimeline.classList.remove('landscape-grid');
+                        expTimeline.classList.add('horizontal-timeline');
+                        if (expPrevBtn) expPrevBtn.style.display = 'flex';
+                        if (expNextBtn) expNextBtn.style.display = 'flex';
+                    }
+                });
+            });
+        }
     </script>
-    <!-- AI Chat & QA Recommender Engine -->
-    <script src="ai-chat.js" defer></script>
 </body>
 </html>

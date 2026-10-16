@@ -1,0 +1,35 @@
+# Security & Secrets
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+credentials.json
+service-account.json
+
+# Operating System
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDE & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Python & Temporary Files
+__pycache__/
+*.py[cod]
+*.class
+*.log
+*.tmp
+*.bak
+scratch/

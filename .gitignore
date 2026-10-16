@@ -33,3 +33,6 @@ __pycache__/
 *.tmp
 *.bak
 scratch/
+node_modules/
+hero_*.png
+edge_err*.log

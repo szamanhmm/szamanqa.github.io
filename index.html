@@ -61,6 +61,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "./js/three/three.module.min.js"
+      }
+    }
+    </script>
+    
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -166,7 +175,7 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Software Testing & QA Engineering Services",
-        "serviceType": "Hire Best Software Tester in Bangladesh & C4U Tech QA Services",
+        "serviceType": "Software Quality Assurance & Automation QA Services",
         "provider": {
             "@type": "Person",
             "name": "Saifuz Zaman",
@@ -312,6 +321,7 @@
 
     <!-- Hero Section -->
     <section class="hero" role="banner">
+        <canvas id="heroDolphinCanvas" class="hero-dolphin-canvas" aria-hidden="true"></canvas>
         <div class="hero-content">
             <h1 class="animated-name">Saifuz Zaman</h1>
             <p>SQA | AI Projects | CEO @ C4U TECH | QA & Operations</p>
@@ -997,5 +1007,7 @@
             });
         }
     </script>
+    <!-- Lightweight 3D Cyber Dolphin Hero Background -->
+    <script type="module" src="js/cyber-dolphin.js" defer></script>
 </body>
 </html>

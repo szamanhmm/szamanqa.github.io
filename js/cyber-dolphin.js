@@ -76,17 +76,20 @@ import { DRACOLoader } from './three/DRACOLoader.js';
   function updateResponsiveScale() {
     const width = window.innerWidth;
     if (width < 768) {
-      dolphinGroup.scale.set(0.24, 0.24, 0.24);
-      dolphinGroup.position.set(0, -0.15, 0);
-      camera.position.set(4.2, 1.2, 4.0);
+      dolphinGroup.scale.set(0.20, 0.20, 0.20);
+      dolphinGroup.position.set(0.12, 1.25, 0);
+      camera.position.set(4.0, 1.0, 3.8);
+      camera.lookAt(0, 0, 0);
     } else if (width < 1200) {
-      dolphinGroup.scale.set(0.32, 0.32, 0.32);
-      dolphinGroup.position.set(0.4, -0.1, 0);
-      camera.position.set(3.8, 1.0, 3.6);
+      dolphinGroup.scale.set(0.26, 0.26, 0.26);
+      dolphinGroup.position.set(0.25, 1.05, 0);
+      camera.position.set(3.8, 0.9, 3.5);
+      camera.lookAt(0, 0, 0);
     } else {
-      dolphinGroup.scale.set(0.38, 0.38, 0.38);
-      dolphinGroup.position.set(0.65, -0.05, 0);
+      dolphinGroup.scale.set(0.30, 0.30, 0.30);
+      dolphinGroup.position.set(0.35, 1.15, 0);
       camera.position.set(3.6, 0.9, 3.4);
+      camera.lookAt(0, 0, 0);
     }
     camera.aspect = getWidth() / getHeight();
     camera.updateProjectionMatrix();

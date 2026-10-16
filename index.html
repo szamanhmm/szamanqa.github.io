@@ -429,6 +429,9 @@
                             <li>Hired and led a reliable team of developers and QA engineers</li>
                             <li>Delivered successful projects to global clients, resulting in repeat business.</li>
                         </ul>
+                        <button class="timeline-card-next" aria-label="Next experience card" title="Next card">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </article>
                 <article class="timeline-item">
@@ -444,6 +447,9 @@
                             <li>Doing manual and automation testing (Cypress, Playwright) of fintech applications</li>
                             <li>Collaborated with cross-functional teams to deliver user-focused, innovative projects.</li>
                         </ul>
+                        <button class="timeline-card-next" aria-label="Next experience card" title="Next card">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </article>
                 <article class="timeline-item">
@@ -458,6 +464,9 @@
                             <li>Prioritized clear communication, providing actionable insights for improvement</li>
                             <li>Worked well in teams, enhancing user experiences through innovative projects</li>
                         </ul>
+                        <button class="timeline-card-next" aria-label="Next experience card" title="Next card">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </article>
                 <article class="timeline-item">
@@ -471,6 +480,9 @@
                             <li>Implemented software for student management and assessments</li>
                             <li>Optimized IT budgets, streamlined vendor communications, and automated routine tasks</li>
                         </ul>
+                        <button class="timeline-card-next" aria-label="Next experience card" title="Next card">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </article>
             </div>
@@ -983,6 +995,19 @@
             });
             expNextBtn.addEventListener('click', () => {
                 expTimeline.scrollBy({ left: 360, behavior: 'smooth' });
+            });
+        }
+
+        const expCardNextBtns = document.querySelectorAll('.timeline-card-next');
+        if (expCardNextBtns.length && expTimeline) {
+            expCardNextBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const card = btn.closest('.timeline-item');
+                    const scrollDist = card ? card.offsetWidth + 20 : 320;
+                    expTimeline.scrollBy({ left: scrollDist, behavior: 'smooth' });
+                });
             });
         }
 

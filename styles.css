@@ -873,6 +873,59 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
 
+        .timeline-card-next {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline.horizontal-timeline .timeline-item {
+                flex: 0 0 85%;
+                min-width: 270px;
+                max-width: 330px;
+            }
+
+            .timeline.horizontal-timeline .timeline-content {
+                position: relative;
+                padding-bottom: 52px;
+            }
+
+            .timeline.horizontal-timeline .timeline-card-next {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: 14px;
+                right: 14px;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: var(--primary);
+                color: #ffffff;
+                border: none;
+                box-shadow: 0 3px 10px rgba(2, 132, 199, 0.4);
+                cursor: pointer;
+                font-size: 14px;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+                z-index: 5;
+            }
+
+            .timeline.horizontal-timeline .timeline-card-next:hover,
+            .timeline.horizontal-timeline .timeline-card-next:active {
+                transform: scale(1.1) translateX(2px);
+                background: #0284c7;
+            }
+
+            .dark-mode .timeline.horizontal-timeline .timeline-card-next {
+                background: #0284c7;
+                color: #ffffff;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .timeline.horizontal-timeline .timeline-item:last-child .timeline-card-next {
+                display: none;
+            }
+        }
+
         /* Mode 2: Wide Landscape Cards (Desktop 2-column) */
         .timeline.landscape-grid {
             display: grid;
@@ -1836,11 +1889,11 @@
 
             .profile-image-container {
                 text-align: center;
-                margin-bottom: 30px;
+                margin-bottom: 24px;
             }
 
             .profile-image {
-                max-width: 300px;
+                max-width: 220px;
                 margin: 0 auto;
             }
 
@@ -1862,6 +1915,21 @@
         }
 
         @media screen and (max-width: 768px) {
+            .profile-image-container {
+                text-align: center;
+                margin-bottom: 18px;
+            }
+
+            .profile-image {
+                max-width: 170px;
+                width: 170px;
+                height: 170px;
+                object-fit: cover;
+                border-radius: 20px;
+                margin: 0 auto;
+                display: block;
+            }
+
             .hero h1, .animated-name {
                 font-size: 2.5rem;
             }
@@ -1927,6 +1995,13 @@
         }
 
         @media screen and (max-width: 576px) {
+            .profile-image {
+                max-width: 145px;
+                width: 145px;
+                height: 145px;
+                border-radius: 16px;
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 gap: 15px;

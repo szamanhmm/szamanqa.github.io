@@ -1128,53 +1128,112 @@
             letter-spacing: 0.02em;
         }
 
-        .timeline-roles-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-bottom: 12px;
+        /* LinkedIn-style Multi-role Timeline */
+        .linkedin-experience {
+            margin: 6px 0 14px 0;
         }
 
-        .timeline-role-item {
+        .linkedin-company-meta {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
-        .timeline-role-label {
-            font-size: 11px;
+        .linkedin-company-meta .role-badge {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+
+        .linkedin-total-tenure {
+            font-size: 12.5px;
+            color: var(--text-muted, #64748b);
+            font-weight: 500;
+        }
+
+        .dark-mode .linkedin-total-tenure {
+            color: #94a3b8;
+        }
+
+        .linkedin-roles-tree {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2px;
+        }
+
+        .linkedin-role-item {
+            display: flex;
+            position: relative;
+            padding-bottom: 14px;
+        }
+
+        .linkedin-role-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .linkedin-marker {
+            position: relative;
+            width: 16px;
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 12px;
+        }
+
+        .linkedin-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #0073b1;
+            margin-top: 5px;
+            z-index: 1;
+            box-shadow: 0 0 0 2px rgba(0, 115, 177, 0.2);
+        }
+
+        .dark-mode .linkedin-dot {
+            background: #38bdf8;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+        }
+
+        .linkedin-line {
+            position: absolute;
+            top: 14px;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: rgba(0, 115, 177, 0.25);
+        }
+
+        .dark-mode .linkedin-line {
+            background: rgba(56, 189, 248, 0.25);
+        }
+
+        .linkedin-role-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .linkedin-role-title {
+            font-size: 14px;
             font-weight: 600;
             color: var(--dark);
-            font-family: var(--mono-font);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
+            margin: 0;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
         }
 
-        .timeline-roles-group .date {
-            margin-bottom: 0;
+        .linkedin-role-dates {
+            font-size: 12.5px;
+            color: var(--text-muted, #64748b);
+            margin: 0;
+            line-height: 1.4;
         }
 
-        .timeline-total-tenure {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #10b981;
-            font-family: var(--mono-font);
-            padding: 2px 8px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            border-radius: 4px;
-            margin-top: 2px;
-            width: fit-content;
-        }
-
-        .dark-mode .timeline-total-tenure {
-            color: #34d399;
-            background: rgba(16, 185, 129, 0.18);
-            border-color: rgba(52, 211, 153, 0.35);
+        .dark-mode .linkedin-role-dates {
+            color: #94a3b8;
         }
 
         /* Technical Bullet Points */
